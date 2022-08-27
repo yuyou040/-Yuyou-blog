@@ -1,0 +1,63 @@
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+	<link href="css/flash.css" rel="stylesheet">
+			<div class="zuiclass">
+			<div class="center">
+				<img  src="img/titleimg/01.png"/>
+				<h2>2021 年 JavaScript Promise 性能对比</h2>
+				<p>我们正生活在一个「Any application that can be written in JavaScript, will eventually be written in JavaScript」的时代。作为一门兼具动态性和简单性的语言，JavaScript 已经占领了客户端、服务端，甚至在机器学习中也占据一席之地；不可避免的，异步执行也逐渐成为这门语言不可缺少的一部分...</p>
+				<div class="xiaobiao">
+				<span>2022-02-18·<a>技术向</a></span>
+				<a href="#" class="jixuyuedu">继续阅读</a>
+				</div>
+			</div>
+			</div>
+			<div class="zuiclass">
+			<div class="center">
+				<img  src="img/titleimg/01.png"/>
+				<h2>2021 年 JavaScript Promise 性能对比</h2>
+				<p>我们正生活在一个「Any application that can be written in JavaScript, will eventually be written in JavaScript」的时代。作为一门兼具动态性和简单性的语言，JavaScript 已经占领了客户端、服务端，甚至在机器学习中也占据一席之地；不可避免的，异步执行也逐渐成为这门语言不可缺少的一部分...</p>
+				<div class="xiaobiao">
+				<span>2022-02-18·<a>技术向</a></span>
+				<a href="#" class="jixuyuedu">继续阅读</a>
+				</div>
+			</div>
+			</div>
+			<div class="zuiclass">
+			<div class="center">
+				<img  src="img/titleimg/01.png"/>
+				<h2>2021 年 JavaScript Promise 性能对比</h2>
+				<p>我们正生活在一个「Any application that can be written in JavaScript, will eventually be written in JavaScript」的时代。作为一门兼具动态性和简单性的语言，JavaScript 已经占领了客户端、服务端，甚至在机器学习中也占据一席之地；不可避免的，异步执行也逐渐成为这门语言不可缺少的一部分...</p>
+				<div class="xiaobiao">
+				<span>2022-02-18·<a>技术向</a></span>
+				<a href="#" class="jixuyuedu">继续阅读</a>
+				</div>
+			</div>
+			</div>
+           
+        <script>
+        	$(function(){
+       /*发送ajax请求*/
+    var getbiaoqian
+    function biaoqian() {
+    var url =
+        'http://192.168.0.111/app.asp?action=read';
+    $.ajax(url, {
+        dataType: 'json',
+        async: true, //异步调用  
+        type: 'get', //HTTP请求类型   
+        headers: {'Content-Type':undefined},
+        timeout: 100000, //超时时间设置为100秒；
+        success: function(data) {
+            var qwe=data
+            console.log(qwe)
+        },
+        error: function(xhr, type, errorThrown) {
+            console.log('当前网络不佳')
+        }
+    });
+}
+
+        biaoqian();
+})
+        </script>
