@@ -115,7 +115,7 @@ body::after {
 } 
 .daohang_a{
 			width: 100%;
-			height: 50px;
+			height: 90px;
 			background: linear-gradient(to bottom,#4584b9,#2e70a5);
 		}
 		ul li{
@@ -132,11 +132,11 @@ body::after {
 		}
        .daohang_a li:nth-child(2){
             background-color: #265e8f;
-            border: #1d496f 0.0625rem solid;
         }
 		.daohang_a ul li{
             border-radius:0.3125rem;
-			margin-top: 8.5px;
+            margin-top: 30px;
+            font-size: 20px;
 			text-align: center;
 			color: white;
 			display: block;
@@ -145,31 +145,29 @@ body::after {
             padding: 6px;
 		}
 		.daohang_a ul{
-			width: 80%;
-			margin: auto;
+			margin-left:170px;
 		}
 #content{
 		padding-top:2.5rem;
-		width: 80%; 
+		width: 1780px; 
 		margin: auto;
 }
 #left_bar{
-    margin-right:4.0625rem;
 	float: left;
-	width: 20%;
+	width: 380px;
 	height: 100%;
+	margin-right:30px;
 }
 #right_bar{
 	float: left;
-	width: 20%;
+	width: 380px;
 	height: 100%;
-	margin-left:1.5rem;
 }
 .right_bar_h{
-	line-height: 30px;
 	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	line-height: 30px;
 	background-color: white;
-	width:100%;
+	width:380px;
 	border-radius:0.46875rem;
 	box-shadow :#d3d3d3 0px 4px 10px 0px;
 }
@@ -202,11 +200,11 @@ body::after {
 	margin-top: -0.625rem;
 }
 .right_bar_c{
+	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
 	margin-top:1.40625rem;
 	text-align: center;
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
 	background-color: white;
-	width:100%;
+	width:380px;
 	border-radius:0.46875rem;
 	box-shadow :#d3d3d3 0px 4px 10px 0px;
 }
@@ -214,7 +212,7 @@ body::after {
 	text-align: center;
 	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
 	background-color: white;
-	width:100%;
+	width:380px !important;
 	border-radius:0.46875rem;
 	box-shadow :#d3d3d3 0px 4px 10px 0px;
 }
@@ -222,7 +220,7 @@ body::after {
 	margin-top: 22.5px;
 	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
 	background-color: white;
-	width:100%;
+	width:380px;
 	border-radius:0.46875rem;
 	box-shadow:#d3d3d3 0px 4px 10px 0px;
 }
@@ -230,7 +228,7 @@ body::after {
 	margin-top: 22.5px;
 	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
 	background-color: white;
-	width:100%;
+	width:380px;
 	border-radius:0.46875rem;
 	box-shadow:#d3d3d3 0px 4px 10px 0px;
 }
@@ -292,13 +290,14 @@ body::after {
 }
 #center_bar{
 	margin: 0 auto;
-	width: 49%;
-	float: left;
+	width: 920px;
+	float: left; 
+	padding: 0 30px 50px 40px;
 }
 .center{
 	padding-bottom: 0.625rem;
 	margin-bottom: 2.1875rem;
-	width: 100%;
+	width: 920px;
 	background-color: white;
 	border-radius:0.46875rem;
 	box-shadow:#d3d3d3 0px 4px 10px 0px;
@@ -349,4 +348,45 @@ body::after {
    position: fixed;
    top: 0;
     
+}
+
+
+
+
+/* 内容区域css */
+#neirong{
+    margin: auto;
+    width: 90%;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 35px;
+}
+#neirong a{
+    color: blue;
+}
+#neirong ul li{
+    list-style: disc;
+}
+#neirong ul li a{
+     color: blue;
+}
+#neirong img{
+    margin-top: 1.25rem;
+}
+.xiaobiao{
+	padding-top:1.25rem ;
+	margin: auto;
+	width: 90%;
+}
+.jixuyuedu {
+	float: right;
+}
+#footer{
+	float: left;
+    bottom: 0;
+	color: #545454;
+	text-align: center;
+	width: 100%;
+	height: 9.375rem;
+	background-color: #363636;
 }

@@ -1,14 +1,18 @@
 $(function(){
     $(document).on("click", ".zuiclass", function(){
-         $("#center_bar").load("content.html");
+         $("#center_bar").load("content.html?");
+         window.location.href = "#?id="+11;
+    })
+     $(document).on("click", "ul li:eq(1)", function(){
+         $("#center_bar").load("one.html");
+          window.location.href = "#?"+"yuyou";
+    });
+     $(document).on("click", "ul li:eq(2)", function(){
+         $("#center_bar").load("guidang.html");
     });
     $(document).on("click", "ul li:eq(3)", function(){
          $("#center_bar").load("biaoqian.html");
     });
-     $(document).on("click", "ul li:eq(1)", function(){
-         $("#center_bar").load("one.html");
-    });
-
 
 
     $(window).scroll(function() {
