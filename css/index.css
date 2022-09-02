@@ -149,16 +149,16 @@ body::after {
 		}
 #content{
 		padding-top:2.5rem;
-		width: 100%; 
+		width: 1250px; 
 		margin:0 auto;
-	
+		display: flex;
+		justify-content: center;
 }
 #left_bar{
 	float: left;
 	width: 265px;
 	height: 100%;
 	margin-right:30px;
-	margin-left: 5%;
 }
 #right_bar{
 	float: left;
