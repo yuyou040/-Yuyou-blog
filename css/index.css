@@ -145,7 +145,7 @@ body::after {
             padding: 6px;
 		}
 		.daohang_a ul{
-			margin-left:6.5%;
+			margin-left:5%;
 		}
 #content{
 		padding-top:2.5rem;
@@ -158,7 +158,7 @@ body::after {
 	width: 265px;
 	height: 100%;
 	margin-right:30px;
-	margin-left: 6.5%;
+	margin-left: 5%;
 }
 #right_bar{
 	float: left;
@@ -166,7 +166,7 @@ body::after {
 	height: 100%;
 }
 .right_bar_h{
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	padding: 1.40625rem 0 1.40625rem 0;
 	line-height: 30px;
 	background-color: white;
 	width:265px;
@@ -202,7 +202,7 @@ body::after {
 	margin-top: -0.625rem;
 }
 .right_bar_c{
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	padding: 1.40625rem 0 1.40625rem 0;
 	margin-top:1.40625rem;
 	text-align: center;
 	background-color: white;
@@ -212,7 +212,7 @@ body::after {
 }
 .left_bar_h{
 	text-align: center;
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	padding: 1.40625rem 0 1.40625rem 0;
 	background-color: white;
 	width:265px !important;
 	border-radius:0.46875rem;
@@ -220,7 +220,7 @@ body::after {
 }
 .left_bar_c{
 	margin-top: 22.5px;
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	padding: 1.40625rem 0 1.40625rem 0;
 	background-color: white;
 	width:265px;
 	border-radius:0.46875rem;
@@ -228,7 +228,7 @@ body::after {
 }
 .left_bar_f{
 	margin-top: 22.5px;
-	padding: 1.40625rem 1.40625rem 1.40625rem 1.40625rem;
+	padding: 1.40625rem 0 1.40625rem 0;
 	background-color: white;
 	width:265px;
 	border-radius:0.46875rem;
