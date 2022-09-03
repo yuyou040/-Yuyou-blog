@@ -1,30 +1,6 @@
 $(function(){
-    $(document).on("click", ".zuiclass", function(){
-        $("#center_bar").load("content.html");
-        window.location.href = "#?id="+"content";
-    })
-     $(document).on("click", "ul li:eq(1)", function(){
-         $("#center_bar").load("one.html");
-          window.location.href = "#"+"index";
-    });
-     $(document).on("click", "ul li:eq(2)", function(){
-         $("#center_bar").load("guidang.html");
-          window.location.href = "#"+"flie";
-    });
-    $(document).on("click", "ul li:eq(3)", function(){
-         $("#center_bar").load("biaoqian.html");
-          window.location.href = "#"+"title";
-    });
-    $(window).scroll(function() {
-    	if ($(document).scrollTop() > 400) {
-    		$(".guding").addClass("cixi");
-    	}
-        else if($(document).scrollTop()<400){
-            $(".guding").removeClass("cixi");
-        }
-    })
-   
-     var tabtitle=$('.daohang_a ul li');
+    /*导航栏点击实时更改颜色*/
+    var tabtitle=$('.daohang_a ul li');
     tabtitle.click(function()
     {
         tabtitle.css({
@@ -41,13 +17,58 @@ $(function(){
     })
 
 
+  /**/
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > 400) {
+        $(".guding").addClass("cixi");
+      }
+        else if($(document).scrollTop()<400){
+            $(".guding").removeClass("cixi");
+        }
+    })
+   
 
-    window.addEventListener("hashchange", function() {
-    // 获取hash值
-    var hash = window.location.hash;
-    if (hash=="#content") {
-         window.location.href = "content.html";
+
+    /*点击导航栏或指定区域触发点击事件更改hash值*/
+    $(document).on("click", ".zuiclass", function(){
+       window.$router.to("content")
+    })
+     $(document).on("click", "ul li:eq(1)", function(){
+         window.$router.to("one")
+    });
+     $(document).on("click", "ul li:eq(2)", function(){
+           window.$router.to("guidang")
+    });
+    $(document).on("click", "ul li:eq(3)", function(){
+          window.$router.to("biaoqian")
+    });
+
+  
+     let routerMap = {
+        "": {
+            "redirect": "one"
+        },
+        "one": {
+            "path": "../myblog/one.html",
+            "son": {}
+        },
+        "content": {
+            "path": "../myblog/content.html",
+            "son": {}
+        },
+        "biaoqian": {
+            "path": "../myblog/biaoqian.html",
+            "son": {}
+        },
+        "guidang": {
+            "path": "../myblog/guidang.html",
+            "son": {}
+        },
+        // "404": {
+        //     "path": "./404/index.html"
+        // }
     }
-    // 根据获取的hash做相应的操作
-});
+
+    window.$router.initial(routerMap)
+
 }) 
