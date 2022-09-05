@@ -11,8 +11,9 @@ $(function(){
             "border":"none"
         })
         $(this).css({
-            "background":"#265e8f",
-            "border":"white"
+            "background":"white",
+            "border":"white",
+            "color":"black"
         })
     })
 

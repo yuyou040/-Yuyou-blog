@@ -8,7 +8,6 @@ body{
 #backgroundco{
 	margin: 0rem;
 	width: 100%;
-	
     background-attachment: fixed;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
@@ -131,7 +130,8 @@ body::after {
 			clear: both;
 		}
        .daohang_a li:nth-child(2){
-            background-color: #265e8f;
+            background-color:white;
+			color: black;
         }
 		.daohang_a ul li{
             border-radius:0.3125rem;
@@ -146,6 +146,9 @@ body::after {
 		}
 		.daohang_a ul{
 			margin-left:5%;
+		}
+		.daohang_a ul li:hover{
+			color: orange!important;
 		}
 #content{
 		padding-top:2.5rem;
