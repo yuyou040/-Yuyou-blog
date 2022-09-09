@@ -43,6 +43,9 @@ $(function(){
     $(document).on("click", "ul li:eq(3)", function(){
           window.$router.to("biaoqian")
     });
+    $(document).on("click", "ul li:eq(4)", function(){
+          window.$router.to("youlian")
+    });
 
   
      let routerMap = {
@@ -65,6 +68,10 @@ $(function(){
             "path": "../myblog/guidang.html",
             "son": {}
         },
+        "youlian":{
+           "path": "../myblog/youlian.html",
+            "son": {}
+        }        
         // "404": {
         //     "path": "./404/index.html"
         // }

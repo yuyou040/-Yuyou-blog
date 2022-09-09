@@ -4,7 +4,7 @@
 <%
  	dim conn,rs,action,res,sql
   	set conn=server.createobject("adodb.connection")
- 	conn.connectionstring="Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("frist.accdb")
+ 	conn.connectionstring="Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
  	conn.open
  	set rs = server.createobject("adodb.recordset")
  	'打开表

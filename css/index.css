@@ -250,6 +250,7 @@ body::after {
 	border-radius: 50%;
 	width: 6.25rem;
 	height: 6.25rem;
+	box-shadow: 5px 5px 15px #d0d0d0;
 }
 .left_bar_h p{
 	color: gray;
