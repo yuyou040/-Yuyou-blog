@@ -35,24 +35,27 @@ $(function(){
        window.$router.to("content")
     })
      $(document).on("click", "ul li:eq(1)", function(){
-         window.$router.to("one")
+         window.$router.to("home")
     });
      $(document).on("click", "ul li:eq(2)", function(){
-           window.$router.to("guidang")
+           window.$router.to("blog")
     });
     $(document).on("click", "ul li:eq(3)", function(){
-          window.$router.to("biaoqian")
+          window.$router.to("title")
     });
     $(document).on("click", "ul li:eq(4)", function(){
-          window.$router.to("youlian")
+          window.$router.to("friend")
+    });
+    $(document).on("click", ".daohang_a p:eq(1)", function(){
+          window.$router.to("search")
     });
 
   
      let routerMap = {
         "": {
-            "redirect": "one"
+            "redirect": "home"
         },
-        "one": {
+        "home": {
             "path": "../myblog/one.html",
             "son": {}
         },
@@ -60,18 +63,21 @@ $(function(){
             "path": "../myblog/content.html",
             "son": {}
         },
-        "biaoqian": {
+        "title": {
             "path": "../myblog/biaoqian.html",
             "son": {}
         },
-        "guidang": {
+        "blog": {
             "path": "../myblog/guidang.html",
             "son": {}
         },
-        "youlian":{
+        "friend":{
            "path": "../myblog/youlian.html",
             "son": {}
-        }        
+        },
+        "search":{
+          "path":"../myblog/search.html",
+        }       
         // "404": {
         //     "path": "./404/index.html"
         // }
