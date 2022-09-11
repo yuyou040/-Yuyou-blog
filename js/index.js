@@ -29,7 +29,7 @@ $(function(){
     })
    
 
-
+    var darkligt=$("#darklist");
     /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".zuiclass", function(){
        window.$router.to("content")
@@ -49,8 +49,15 @@ $(function(){
     $(document).on("click", ".daohang_a p:eq(1)", function(){
           window.$router.to("search")
     });
+     $(document).on("click", ".daohang_a p:eq(2)", function(){
+        darkligt.toggle()
+    }); 
+    var darkson = $("#darklist p");
+    darkson.click(function(e){
+      console.log($(e.target).text())
+      darkligt.hide()
+    })
 
-  
      let routerMap = {
         "": {
             "redirect": "home"
