@@ -182,8 +182,8 @@ body::after {
     		border-radius: 7.5px;
 		}
 		#darklist p{
-			padding: 10px 0;
 			cursor: pointer;
+			margin: 0 auto;
 		}
 		#darklist p:hover{
 			background-color: rgb(207,208,214);
@@ -217,11 +217,12 @@ body::after {
 	box-shadow :#d3d3d3 0px 4px 10px 0px;
 }
 .right_bar_h hr{
-	border:0.0125rem dashed #D3D3D3;"
-	padding-top: 1.25rem;
+	border:0.0125rem dashed #D3D3D3;
+	margin:10px 0; 
 }
 .right_bar_h p{
 	font-size: 0.75rem;
+	line-height: 20px;
 	color: gray;
 	text-align: left;
 }
@@ -359,6 +360,7 @@ body::after {
 	width: 90%;
 }
 .center p{
+	margin-left: 30px; 
 	padding-top: 0.625rem;
 	font-size: 14px;
 }
