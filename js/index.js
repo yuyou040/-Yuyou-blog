@@ -18,7 +18,6 @@ $(function(){
     })
 
 
-  /**/
     $(window).scroll(function() {
       if ($(document).scrollTop() > 400) {
         $(".guding").addClass("cixi");
