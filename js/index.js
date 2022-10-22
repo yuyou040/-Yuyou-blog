@@ -18,14 +18,14 @@ $(function(){
     })
 
 
-    $(window).scroll(function() {
-      if ($(document).scrollTop() > 400) {
-        $(".guding").addClass("cixi");
-      }
-        else if($(document).scrollTop()<400){
-            $(".guding").removeClass("cixi");
-        }
-    })
+    // $(window).scroll(function() {
+    //   if ($(document).scrollTop() > 400) {
+    //     $(".guding").addClass("cixi");
+    //   }
+    //     else if($(document).scrollTop()<400){
+    //         $(".guding").removeClass("cixi");
+    //     }
+    // })
    
 
     var darkligt=$("#darklist");
