@@ -202,14 +202,14 @@ body::after {
 	padding-top:2.5rem; 
 }
 #left_bar{
-    margin-left:4.0625rem;
+    margin-right:25px;
 	width: 16.25rem;
 	height: 100%;
 }
 #right_bar{
 	width: 16.25rem;
 	height: 100%;
-	margin-left:1.5rem;
+    margin-left:20px;
 }
 .right_bar_h{
 	line-height: 30px;
@@ -340,7 +340,6 @@ body::after {
 }
 #center_bar{
 	width: 605px;
-    margin-left: 35px;
 }
 .center{
     flex:1;
