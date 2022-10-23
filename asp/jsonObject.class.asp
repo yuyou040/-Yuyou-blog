@@ -20,7 +20,7 @@ class JSONobject
 	dim i_properties, i_version, i_defaultPropertyName
 	private vbback
 	
-	' 设置为true以显示解析调试信息
+	' Set to true to show the internals of the parsing mecanism
 	public property get debug
 		debug = i_debug
 	end property
@@ -30,7 +30,7 @@ class JSONobject
 	end property
 
 	
-	' 获得/设置 加载记录集和数组时生成的默认属性名称 (默认是 "data")
+	' Gets/sets the default property name generated when loading recordsets and arrays (default "data")
 	public property get defaultPropertyName
 		defaultPropertyName = i_defaultPropertyName
 	end property
@@ -40,17 +40,19 @@ class JSONobject
 	end property
 
 
-	' 对象的深度，以1开头
+	' The depth of the object in the chain, starting with 1
 	public property get depth
 		depth = i_depth
-	end property	
+	end property
 	
-	' 属性配对 ("name": "value" - 一对)
+	
+	' The property pairs ("name": "value" - pairs)
 	public property get pairs
 		pairs = i_properties
-	end property	
+	end property
 	
-	' 父对象
+	
+	' The parent object
 	public property get parent
 		set parent = i_parent
 	end property
@@ -61,7 +63,8 @@ class JSONobject
 	end property
 	
 	
-	' 构造和销毁
+
+	' Constructor and destructor
 	private sub class_initialize()
 		i_version = "3.8.1"
 		i_depth = 0
@@ -84,7 +87,7 @@ class JSONobject
 	end sub
 	
 	
-	' 解析JSON字符串并填充对象
+	' Parse a JSON string and populate the object
 	public function parse(byval strJson)
 		dim regex, i, size, char, prevchar, quoted
 		dim mode, item, key, value, openArray, openObject
@@ -93,7 +96,7 @@ class JSONobject
 		
 		log("Load string: """ & strJson & """")
 		
-		'	'存储实际 LCID并使用en-US 遵从JSON标准
+		' Store the actual LCID and use the en-US to conform with the JSON standard
 		actualLCID = Response.LCID
 		Response.LCID = 1033
 		
@@ -101,16 +104,16 @@ class JSONobject
 		
 		size = len(strJson)
 		
-		' 至少要有2个字符才会继续
+		' At least 2 chars to continue
 		if size < 2 then err.raise JSON_ERROR_PARSE, TypeName(me), "Invalid JSON string to parse"
 		
-		' 初始化用于循环的regex
+		' Init the regex to be used in the loop
 		set regex = new regexp
 		regex.global = true
 		regex.ignoreCase = true
 		regex.pattern = "\w"
 		
-		' 设置初始值
+		' setup initial values
 		i = 0
 		set root = me
 		key = JSON_ROOT_KEY
@@ -135,16 +138,16 @@ class JSONobject
 					log("Create object<ul>")
 					
 					if key <> JSON_ROOT_KEY or TypeName(root) = "JSONarray" then
-						' 创建一个新对象
+						' creates a new object
 						set item = new JSONobject
 						set item.parent = currentObject
 						
 						addedToArray = false
 						
-						' 对象在数组中
+						' Object is inside an array
 						if TypeName(currentArray) = "JSONarray" then
 							if currentArray.depth > currentObject.depth then
-								' 将其添加到数组中
+								' Add it to the array
 								set item.parent = currentArray
 								currentArray.Push item
 								
@@ -405,7 +408,7 @@ class JSONobject
 				mode = "next"
 				i = i - 1
 			
-			' 根据当前状态更改当前模式
+			' Change the current mode according to the current state
 			elseif mode = "next" then
 				if char = "," then
 					' If it's an array
@@ -496,13 +499,13 @@ class JSONobject
 		set parse = root
 	end function
 	
-	' 新增一个属性
+	' Add a new property (key-value pair)
 	public sub add(byval prop, byval obj)
 		dim p
 		getProperty prop, p
 		
 		if GetTypeName(p) = "JSONpair" then
-			err.raise JSON_ERROR_PROPERTY_ALREADY_EXISTS, TypeName(me), "该属性名已经存在: " & prop & "."
+			err.raise JSON_ERROR_PROPERTY_ALREADY_EXISTS, TypeName(me), "A property already exists with the name: " & prop & "."
 		else
 			dim item
 			set item = new JSONpair
@@ -532,16 +535,16 @@ class JSONobject
 		end if
 	end sub
 	
-	'  从对象中移除属性
+	' Remove a property from the object (key-value pair)
 	public sub remove(byval prop)
 		dim p, i
 		i = getProperty(prop, p)
 		
-		'  属性存在
+		' property exists
 		if i > -1 then ArraySlice i_properties, i
 	end sub
 	
-	'  通过键返回其属性的值
+	' Return the value of a property by its key
 	public default function value(byval prop)
 		dim p
 		getProperty prop, p
@@ -557,8 +560,8 @@ class JSONobject
 		end if
 	end function
 	
-	' 改变属性值
-	' 如果属性不存在就创建该属性
+	' Change the value of a property
+	' Creates the property if it didn't exists
 	public sub change(byval prop, byval obj)
 		dim p
 		getProperty prop, p
@@ -610,7 +613,7 @@ class JSONobject
 	end function
 	
 	
-	' 序列化当前对象为 一个JSON 格式字符串
+	' Serialize the current object to a JSON formatted string
 	public function Serialize()
 		dim actualLCID, out
 		actualLCID = Response.LCID
@@ -618,19 +621,19 @@ class JSONobject
 		
 		out = serializeObject(me)
 		
-		Response.LCID = actualLCID
+		Response.LCID = 2052
 		
 		Serialize = out
 	end function
 	
-	' 将JSON序列化对象写入response 
+	' Writes the JSON serialized object to the response
 	public sub write()
 		response.write Serialize
 	end sub
 	
 	
-	
-	' 将JSON对象序列化为JSON格式的字符串
+	' Helpers
+	' Serializes a JSON object to JSON formatted string
 	public function serializeObject(obj)
 		dim out, prop, value, i, pairs, valueType
 		out = "{"
@@ -859,7 +862,7 @@ class JSONobject
 		ArraySlice = arr
 	end function
 	
-	' 将ADO RecordSet对象的属性加载到数组中
+	' Load properties from an ADO RecordSet object into an array
 	' @param rs as ADODB.RecordSet
 	public sub LoadRecordSet(byref rs)
 		dim arr, obj, field
@@ -1205,21 +1208,4 @@ class JSONpair
 		if isObject(value) then set value = nothing
 	end sub
 end class
-
-Public Function OpenFile(Fname)
-dim whichfile,fso,txt,rline  
-whichfile=server.mappath(Fname) 
-Set fso = CreateObject("Scripting.FileSystemObject") 
-if fso.fileExists(whichfile) then    
-Set txt = fso.OpenTextFile(whichfile,1,true)  
-if not txt.atendofstream then    
-  rline=txt.ReadAll 
-else 
-rline=""   
- end if 
-OpenFile=rline 
-txt.Close  
-end if 
-Set fso = Nothing 
-END Function 
 %>
