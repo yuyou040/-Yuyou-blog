@@ -26,6 +26,7 @@ jquery+ASP（并非ASP.Net）搭建的私人博客
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
 
 
-####🚀🚀致谢🚀🚀
+#### 🚀🚀致谢🚀🚀
 @ropex
- -🚀🚀感谢在开发中做出卓越贡献🚀🚀
+ 
+-🚀🚀感谢在开发中做出卓越贡献🚀🚀
