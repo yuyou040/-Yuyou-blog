@@ -8,7 +8,7 @@
  	conn.open
  	set rs = server.createobject("adodb.recordset")
  	'打开表
- 	sql="select biaoti from biaoqian"
+ 	sql="select distinct label from content"
  	action=request.queryString("action")
 	rs.open sql,conn,1,3
 	'读取数据库
@@ -23,7 +23,7 @@
  	redim myArray(rs.recordcount-1) '将数组大小重新定义为数据表行数
  	do while not rs.eof
  	'response.charset="utf8"
- 	qwe= rs("biaoti")
+ 	qwe= rs("label")
  	myArray(index)=qwe
 	rs.movenext
 	index=index+1

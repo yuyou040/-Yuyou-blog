@@ -4,7 +4,6 @@
 <%
 
 const SQL = "SELECT COUNT(*) FROM content WHERE class = "
-
 dim str_json
 dim jsonObj
 dim category_array,category_array_json

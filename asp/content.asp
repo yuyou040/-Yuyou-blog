@@ -10,7 +10,7 @@ set jsonObj = new JSONobject  '//创建对象
 dim cn, rs
 set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
-set rs = cn.execute("SELECT * FROM conternt")
+set rs = cn.execute("SELECT * FROM content")
 
 jsonObj.LoadRecordset rs
 
