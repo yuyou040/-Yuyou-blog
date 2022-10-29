@@ -16,7 +16,7 @@ dim cn, rs
 set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
 'set rs = cn.execute("SELECT * FROM content")
-
+if request.querystring("action")="read_category" then
 category_array = Array("'selfwords'","'technology'","'note'","'creation'","'share'","'others'")
 category_array_json = Array("selfwords","technology","note","creation","share","others")
 jsonObj.defaultPropertyName = "Category"
@@ -28,7 +28,7 @@ for i = 0 to ubound(category_array)
     jsonObj.add category_array_json(i), rs("Expr1000")
 next
 jsonObj.Write() 
-
+end if
 rs.Close
 cn.Close
 set rs = Nothing

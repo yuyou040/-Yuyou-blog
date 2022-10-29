@@ -39,29 +39,3 @@
            		$("#fenye").load("fenye.html")
            	</script>
            </div>
-        <script>
-        	$(function(){
-       /*发送ajax请求*/
-    var getbiaoqian
-    function biaoqian() {
-    var url =
-        'http://192.168.47.1/myblog/asp/content.asp';
-    $.ajax(url, {
-        dataType: 'json',
-        async: true, //异步调用  
-        type: 'get', //HTTP请求类型   
-        headers: {'Content-Type':undefined},
-        timeout: 100000, //超时时间设置为100秒；
-        success: function(data) {
-            var qwe=data
-            console.log(qwe)
-        },
-        error: function(xhr, type, errorThrown) {
-            console.log('当前网络不佳')
-        }
-    });
-}
-
-        biaoqian();
-})
-        </script>

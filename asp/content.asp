@@ -5,7 +5,7 @@
 dim str_json
 dim jsonObj,jsonString,outputObj
 set jsonObj = new JSONobject  '//创建对象
-
+if request.querystring("action")="read_content" then
 ' 从ADODB.Recordset加载记录集
 dim cn, rs
 set cn = server.createobject("adodb.connection")
@@ -20,7 +20,7 @@ set rs = Nothing
 set cn = Nothing
 jsonObj.defaultPropertyName = "AdminList"
 jsonObj.Write()                 
-
+end if
 set jsonObj=nothing
 
 %>

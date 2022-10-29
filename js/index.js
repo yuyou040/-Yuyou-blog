@@ -4,7 +4,7 @@ $(function(){
     tabtitle.click(function()
     {
         tabtitle.css({
-            "background":"linear-gradient(to bottom,#4584b9,#2e70a5)",
+            "background":"var(--surface1)",
             "border-radius":"0.3125rem",
             "text-align": "center",
             "color":"white",
@@ -16,8 +16,6 @@ $(function(){
             "color":"black"
         })
     })
-
-
     // $(window).scroll(function() {
     //   if ($(document).scrollTop() > 400) {
     //     $(".guding").addClass("cixi");
@@ -26,8 +24,6 @@ $(function(){
     //         $(".guding").removeClass("cixi");
     //     }
     // })
-   
-
     var darkligt=$("#darklist");
     /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".zuiclass", function(){
@@ -48,15 +44,26 @@ $(function(){
     $(document).on("click", ".daohang_a p:eq(1)", function(){
           window.$router.to("search")
     });
-     $(document).on("click", ".daohang_a p:eq(2)", function(){
-        darkligt.toggle()
+    $(document).on("click", ".daohang_a p:eq(2)", function(){
+    if($('html').attr("color-mode")=='dark'){
+        document.documentElement.setAttribute("color-mode", "light");
+        localStorage.setItem("color-mode", "light")
+    }
+    else{
+        document.documentElement.setAttribute("color-mode", "dark");
+        localStorage.setItem("color-mode", "dark")
+    }
     }); 
-    var darkson = $("#darklist p");
-    darkson.click(function(e){
-      console.log($(e.target).text())
-      darkligt.hide()
-    })
-
+    // 获取localStorage
+    var colormode = localStorage.getItem('color-mode')
+    if (colormode != null) {
+           document.documentElement.setAttribute("color-mode", colormode);
+          }
+          else{ 
+           document.documentElement.setAttribute("color-mode", "light");
+          }
+    
+    
      let routerMap = {
         "": {
             "redirect": "home"
@@ -88,7 +95,5 @@ $(function(){
         //     "path": "./404/index.html"
         // }
     }
-
     window.$router.initial(routerMap)
-
 }) 
