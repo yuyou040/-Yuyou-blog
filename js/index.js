@@ -48,10 +48,20 @@ $(function(){
     if($('html').attr("color-mode")=='dark'){
         document.documentElement.setAttribute("color-mode", "light");
         localStorage.setItem("color-mode", "light")
+        // 解决老版本网站主背景使用var变量不兼容问题
+         $('body').css({ 
+            "background":" url(../myblog/img/bg.jpg)",
+            "transition":" 0.4s"
+                        })
     }
     else{
         document.documentElement.setAttribute("color-mode", "dark");
         localStorage.setItem("color-mode", "dark")
+        // 解决老版本网站主背景使用var变量不兼容问题
+         $('body').css({ 
+            "background":" url(../myblog/img/bg2.jpg)",
+            "transition":" 0.4s"
+                        })
     }
     }); 
     // 获取localStorage
@@ -61,8 +71,25 @@ $(function(){
           }
           else{ 
            document.documentElement.setAttribute("color-mode", "light");
+           // 解决老版本网站主背景使用var变量不兼容问题
+           $('body').css({ 
+            "background":" url(../myblog/img/bg.jpg)",
+            "transition":" 0.4s"
+                        })
           }
-    
+          // 解决老版本网站主背景使用var变量不兼容问题
+    if(colormode=='light'){
+        $('body').css({ 
+            "background":" url(../myblog/img/bg.jpg)",
+            "transition":" 0.4s"
+                        })
+    }
+    else{
+        $('body').css({ 
+            "background":" url(../myblog/img/bg2.jpg)",
+            "transition":" 0.4s"
+                        })
+    }
     
      let routerMap = {
         "": {
