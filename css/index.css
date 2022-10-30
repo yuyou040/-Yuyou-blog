@@ -525,6 +525,7 @@ p {
     border-radius: 15px;
     margin-top: 35px;
     transition: 0.4s;
+    box-shadow: var(--touying) 0px 4px 10px 0px;
 }
 
 .guidangbox h1 {
@@ -565,7 +566,8 @@ p {
 		margin:20px 0 20px 0; 
 		background-color:  var(--surface3);
 		border-radius: 15px;
-         transition: 0.4s;
+        transition: 0.4s;
+        box-shadow: var(--touying) 0px 4px 10px 0px;
 	}
     
     
@@ -589,6 +591,7 @@ p {
 	border-radius: 15px; 
 	margin: 35px 30px 0 0 ;
     transition: 0.4s;
+    box-shadow: var(--touying) 0px 4px 10px 0px;
 }
 .youlianlist img{
 	display: inline;
