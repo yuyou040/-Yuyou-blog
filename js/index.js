@@ -78,15 +78,15 @@ $(function(){
                         })
           }
           // 解决老版本网站主背景使用var变量不兼容问题
-    if(colormode=='light'){
+    if(colormode=='dark'){
         $('body').css({ 
-            "background":" url(../myblog/img/bg.jpg)",
+            "background":" url(../myblog/img/bg2.jpg)",
             "transition":" 0.4s"
                         })
     }
     else{
         $('body').css({ 
-            "background":" url(../myblog/img/bg2.jpg)",
+            "background":" url(../myblog/img/bg.jpg)",
             "transition":" 0.4s"
                         })
     }
