@@ -27,22 +27,22 @@ $(function(){
     var darkligt=$("#darklist");
     /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".zuiclass", function(){
-       window.$router.to("content")
+       window.$router.to("/content")
     })
      $(document).on("click", "ul li:eq(1)", function(){
-         window.$router.to("home")
+         window.$router.to("/home")
     });
      $(document).on("click", "ul li:eq(2)", function(){
-           window.$router.to("blog")
+           window.$router.to("/blog")
     });
     $(document).on("click", "ul li:eq(3)", function(){
-          window.$router.to("title")
+          window.$router.to("/title")
     });
     $(document).on("click", "ul li:eq(4)", function(){
-          window.$router.to("friend")
+          window.$router.to("/friend")
     });
     $(document).on("click", ".daohang_a p:eq(1)", function(){
-          window.$router.to("search")
+          window.$router.to("/search")
     });
     $(document).on("click", ".daohang_a p:eq(2)", function(){
     if($('html').attr("color-mode")=='dark'){
@@ -91,7 +91,8 @@ $(function(){
                         })
     }
     
-     let routerMap = {
+    
+    var routerMap = {
         "": {
             "redirect": "home"
         },
@@ -118,9 +119,6 @@ $(function(){
         "search":{
           "path":"../myblog/search.html",
         }       
-        // "404": {
-        //     "path": "./404/index.html"
-        // }
     }
     window.$router.initial(routerMap)
 }) 
