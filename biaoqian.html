@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>标签</title>
-        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
         <link href="css/flash.css" rel="stylesheet">
     </head>
     <body>
@@ -137,8 +135,6 @@
         </div>
         <script>
             $(function() {
-
-
                 var tags_a = $("#tags p");
                 tags_a.each(function() {
                     var x = 9;
@@ -146,11 +142,6 @@
                     var rand = parseInt(Math.random() * (x - y + 1) + y);
                     $(this).addClass("tags" + rand);
                 });
-                $(".daohang_a ul li:eq(3)").click(function() {
-                    $("#center_bar").load("biaoqian.html");
-                })
-
-
             })
         </script>
 
