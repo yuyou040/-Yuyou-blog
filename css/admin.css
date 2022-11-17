@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+#leftdaohang ul{
+    float: left;
+    width: 210px;
+    position: absolute;
+    height: 100%;
+    background-color: 01408e;
+}
+#leftdaohang p{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    text-align: center;
+    color:#01408e ;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+#leftdaohang ul li{
+    padding: 30px 0 30px 0;
+    text-align: center;
+    font-size: 14px;
+    list-style: none;
+    color: #232323;
+    width: 100%;
+    border-bottom: 1px rgba(1,64,142,0.2) solid;
+}
+#leftdaohang ul div:hover{
+    background-color: rgba(1,64,142,0.5);
+    border-right: #01408e 5px solid;
+    transition:0.5s;
+}
+#leftdaohang ul div{
+    background-color: white;
+    transition:2s;
+}
+#fenxi,#wenzhang,#caogao,#tupian,#zhuzhan,#zidong,#loginout{
+    position: relative;
+    top: 25px;
+}
+.fenxi{
+  position: absolute;
+  background: url('../img/fenxi.png') no-repeat;
+  background-size: 30px 30px;
+  width: 50px;
+  height: 50px;
+  top: 25px;
+  left: 40px;
+}
+.wenzhang{
+  position: absolute;
+  background: url("../img/guanli.png") no-repeat;
+  background-size: 20px 20px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 45px;
+}
+.caogao{
+  position: absolute;
+  background: url("../img/caogao.png") no-repeat;
+  background-size: 20px 20px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 45px;
+}
+.tupian{
+  position: absolute;
+  background: url("../img/tupian.png") no-repeat;
+  background-size: 23px 23px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 45px;
+}
+.zhuzhan{
+  position: absolute;
+  background: url("../img/zhuzhan.png") no-repeat;
+  background-size: 23px 23px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 45px;
+}
+.zidong{
+  position: absolute;
+  background: url("../img/dengii.png") no-repeat;
+  background-size: 30px 30px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 40px;
+}
+.loginout{
+  position: absolute;
+  background: url("../img/dengchu.png") no-repeat;
+  background-size: 23px 23px;
+  width: 50px;
+  height: 50px;
+  top: 28px;
+  left: 45px;
+}
