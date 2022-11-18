@@ -1,6 +1,39 @@
+html[color-mode='light'] {
+    --surface1: linear-gradient(to bottom, #4584b9, #2e70a5);
+    --surface2: url(../img/bg.jpg);
+    --surface3: #ffffff;
+    --touying: #d3d3d3;
+    --element1: #111111;
+    --element2: #222222;
+    --element3: #333333;
+    --elementInverse: #eee;
+    --primary: #01408e;
+    --secondary: #3c5d5c;
+    --tertiary: #2b2b2b;
+    --search:rgb(207,208,214); 
+}
+
+html[color-mode='dark'] {
+    --surface1: linear-gradient(to bottom, #182e41, #0c1f2d);
+    --surface2: url(../img/bg2.jpg);
+    --surface3: #404040;
+    --touying: #191919;
+    --element1: #eeeeee;
+    --element2: #dddddd;
+    --element3: #cccccc;
+    --elementInverse: #111;
+    --primary: #8fceff;
+    --secondary: #72faca;
+    --tertiary:floralwhite;
+    --search:#6d6e71;
+}
 *{
     margin: 0;
     padding: 0;
+}
+body {
+    background:white;
+    transition: 0.4s;
 }
 ul li{
     margin: 0;
@@ -8,13 +41,14 @@ ul li{
     cursor: pointer;
 }
 #leftdaohang ul{
-    float: left;
     width: 210px;
-    position: absolute;
-    height: 100%;
-    background-color: 01408e;
+}
+#fenxi{
+    margin-top: 5vh;
+    border-right: #01408e 5px solid;
 }
 #leftdaohang p{
+    margin-left: -18px;
     margin-top: 2vh;
     margin-bottom: 1vh;
     text-align: center;
@@ -22,26 +56,30 @@ ul li{
     width: 100%;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 #leftdaohang ul li{
-    padding: 30px 0 30px 0;
+    padding: 15px 0 15px 0;
     text-align: center;
     font-size: 14px;
     list-style: none;
     color: #232323;
     width: 100%;
-    border-bottom: 1px rgba(1,64,142,0.2) solid;
+    /* border-bottom: 1px rgba(1,64,142,0.2) solid; */
 }
 #leftdaohang ul div:hover{
-    background-color: rgba(1,64,142,0.5);
+    background-color: rgba(1,64,142,0.3);
     border-right: #01408e 5px solid;
     transition:0.5s;
 }
+#leftdaohang ul li:hover{
+    color: #0173ff;
+    transition:0.5s;
+}
 #leftdaohang ul div{
-    background-color: white;
     transition:2s;
 }
-#fenxi,#wenzhang,#caogao,#tupian,#zhuzhan,#zidong,#loginout{
+#fenxi,#wenzhang,#caogao,#tupian,#zhuzhan{
     position: relative;
     top: 25px;
 }
@@ -51,7 +89,7 @@ ul li{
   background-size: 30px 30px;
   width: 50px;
   height: 50px;
-  top: 25px;
+  top: 10px;
   left: 40px;
 }
 .wenzhang{
@@ -60,7 +98,7 @@ ul li{
   background-size: 20px 20px;
   width: 50px;
   height: 50px;
-  top: 28px;
+  top: 14px;
   left: 45px;
 }
 .caogao{
@@ -69,7 +107,7 @@ ul li{
   background-size: 20px 20px;
   width: 50px;
   height: 50px;
-  top: 28px;
+  top: 14px;
   left: 45px;
 }
 .tupian{
@@ -78,7 +116,7 @@ ul li{
   background-size: 23px 23px;
   width: 50px;
   height: 50px;
-  top: 28px;
+  top: 14px;
   left: 45px;
 }
 .zhuzhan{
@@ -87,7 +125,7 @@ ul li{
   background-size: 23px 23px;
   width: 50px;
   height: 50px;
-  top: 28px;
+  top: 14px;
   left: 45px;
 }
 .zidong{
@@ -96,8 +134,8 @@ ul li{
   background-size: 30px 30px;
   width: 50px;
   height: 50px;
-  top: 28px;
-  left: 40px;
+  top: 12px;
+  left: 45px;
 }
 .loginout{
   position: absolute;
@@ -105,6 +143,27 @@ ul li{
   background-size: 23px 23px;
   width: 50px;
   height: 50px;
-  top: 28px;
-  left: 45px;
+  top: 14px;
+  left: 50px;
+}
+#zidong{
+    position: absolute;
+    width: 210px;
+    bottom: 0;
+    margin-bottom: 69px;
+}
+#loginout{
+    position: absolute;
+    width: 210px;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+#rightcontent{
+    display: flex;
+    width: 100%;
+}
+#bestbox{
+    display: flex;
+    flex-wrap: nowrap;
 }

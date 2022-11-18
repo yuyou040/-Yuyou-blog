@@ -16,16 +16,7 @@ $(function(){
             "color":"black"
         })
     })
-    // $(window).scroll(function() {
-    //   if ($(document).scrollTop() > 400) {
-    //     $(".guding").addClass("cixi");
-    //   }
-    //     else if($(document).scrollTop()<400){
-    //         $(".guding").removeClass("cixi");
-    //     }
-    // })
-    var darkligt=$("#darklist");
-    /*点击导航栏或指定区域触发点击事件更改hash值*/
+        /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".zuiclass", function(){
        window.$router.to("/content")
     })
@@ -64,6 +55,9 @@ $(function(){
                         })
     }
     }); 
+    $(document).on("click", ".daohang_a p:eq(3)", function(){
+      window.open('_blank').location = "http://192.168.47.1/myblog/admin/admin.html"
+    });
     // 获取localStorage
     var colormode = localStorage.getItem('color-mode')
     if (colormode != null) {
