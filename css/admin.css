@@ -49,8 +49,7 @@ ul li{
 }
 #leftdaohang p{
     margin-left: -18px;
-    margin-top: 2vh;
-    margin-bottom: 1vh;
+    margin-top: 60px;
     text-align: center;
     color:#01408e ;
     width: 100%;
@@ -150,7 +149,8 @@ ul li{
     position: absolute;
     width: 210px;
     bottom: 0;
-    margin-bottom: 69px;
+    margin-bottom: 49px;
+    padding-bottom: 70px;
 }
 #loginout{
     position: absolute;
@@ -160,10 +160,90 @@ ul li{
 }
 
 #rightcontent{
-    display: flex;
     width: 100%;
 }
 #bestbox{
     display: flex;
-    flex-wrap: nowrap;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 数据分析css */
+
+.superbox{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+#titleshuju{  
+     color: #01408e;
+     font-weight: bold;
+     font-size: 18px;
+     align-item:center;
+     width:100%;
+     padding: 20px 0  20px 20px;
+     border-radius: 5px;
+     box-shadow: rgba(1,64,142,0.5) 0px 4px 10px 0px;
+}
+#tongji{
+    width: 100%;
+    border-radius: 5px;
+    padding: 40px 10px  40px 10px;
+    margin-top: 20px;
+    box-shadow: rgba(1,64,142,0.5) 0px 4px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    
+}
+.sel1 p{
+    font-size: 16px;
+}
+.sel1 p:nth-child(2){
+    font-size: 20px;
+} 
+.sel1 mark{
+    color: #01408e;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+    font-style: 0.75rem;
+    font-weight: bold;
+}
+#jqplot{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 30px 10px  30px 10px;
+    height: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(1,64,142,0.5) 0px 4px 10px 0px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    flex-grow:1;
+}
+#jqplot div{
+    width: 60vh;
+    margin:20px 10px 0 10px ;
+    height:40vh ;
+    background-color: aquamarine;
+}
+
+
+
+
+
