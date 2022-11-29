@@ -10,7 +10,9 @@ if request.querystring("action")="read_content" then
 dim cn, rs
 set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
-set rs = cn.execute("SELECT * FROM content")
+'rs.recordcount 总记录数
+'rs。pagesize 设置每页显示几条
+set rs = cn.execute("select * top 5 from content where  order by  desc(sec)")
 jsonObj.LoadRecordset rs
 rs.Close
 cn.Close

@@ -246,4 +246,60 @@ ul li{
 
 
 
+/* 文章管理 */
 
+.searchwenzhang{
+   font-size: 18px;
+   width:100%;
+   padding: 20px 0  20px 20px;
+   border-radius: 5px;
+   box-shadow: rgba(1,64,142,0.5) 0px 4px 10px 0px;
+}
+input,select{
+    outline:none;
+    }
+input:focus { outline: none; } 
+.text{
+    width: 250px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.searchwenzhang select{
+    width: 250px;
+    height: 28px;
+    margin-left: 10px;
+}
+.searchwenzhang button{
+    float: right;
+    margin-right: 40px;
+    border: 1px solid transparent; 
+    outline: none;   
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 2.5px;
+    transition:0.3s;
+}
+.searchwenzhang button:hover{
+    margin-top:5px;
+    transition:0.3s;
+}
+
+.atriclelist{
+    font-size: 18px;
+    width:100%;
+    margin-top: 20px;
+    padding: 20px 0  20px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(1,64,142,0.5) 0px 4px 10px 0px;
+}
+table {
+    width:100%;
+    border-collapse: collapse;
+    display: table;
+}
+td,th{
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
