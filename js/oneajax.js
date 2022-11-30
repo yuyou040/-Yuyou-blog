@@ -16,6 +16,7 @@
                 $.each(content,function(i,value){
                     contentHtml += `
                     <div class="center">
+                     <p style="display:none;" class="valueid">${value.id}</p>
 						<img  src= ${value.imgaes}/>
 						<h2>${value.title}</h2>
 						<p>${value.brief}</p>

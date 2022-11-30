@@ -17,8 +17,10 @@ $(function(){
         })
     })
         /*点击导航栏或指定区域触发点击事件更改hash值*/
-    $(document).on("click", ".zuiclass", function(){
-       window.$router.to("/content")
+    $(document).on("click", ".center", function(e){
+        var text_Id = $(this).children('.valueid').text()
+       window.$router.changeHash("/content?text_Id="+text_Id)
+       $(window).scrollTop(0)
     })
      $(document).on("click", "ul li:eq(1)", function(){
          window.$router.to("/home")
