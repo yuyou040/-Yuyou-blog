@@ -12,10 +12,10 @@ dim cn, rs
 set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
 if request.querystring("action")="read_content" then
-set rs = cn.execute("SELECT * FROM content")
+    set rs = cn.execute("SELECT * FROM content")
 end if 
 if request.querystring("read")="blogmessage" then
-set rs = cn.execute("SELECT * FROM content where id ="& text_Id)
+    set rs = cn.execute("SELECT * FROM content where id ="& text_Id)
 end if 
 jsonObj.LoadRecordset rs
 rs.Close
