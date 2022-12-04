@@ -18,6 +18,7 @@ sql="select * from content"
 rs.open sql,cn,1,3
 rs.pagesize=3
 rs.absolutepage=1
+jsonObj.add "recordcount", rs.recordcount
 jsonObj.LoadRecordSetNum rs,rs.pagesize
 rs.Close
 cn.Close
