@@ -16,17 +16,10 @@ sql="select * from content"
 'rs。pagesize 设置每页显示几条
 'set rs = cn.execute("select * from content where ID=1")
 rs.open sql,cn,1,3
-rs.pagesize=5
-rs.absolutepage=2
-for i = 1 to rs.pagesize
-  'response.Write rs("id")&rs("label")
-  jsonObj.LoadRecordset rs
-   If rs.eof then exit for
-   rs.movenext 
-next
+rs.pagesize=3
+rs.absolutepage=1
+jsonObj.LoadRecordSetNum rs,rs.pagesize
 
-'set rs = cn.execute("SELECT TOP 5 * FROM content")
-'jsonObj.LoadRecordset rs
 rs.Close
 cn.Close
 set rs = Nothing

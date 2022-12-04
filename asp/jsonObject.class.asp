@@ -896,6 +896,32 @@ class JSONobject
 		next
 	end sub
 	
+	' Load properties from an ADO RecordSet object into an array within number
+	' @param rs as ADODB.RecordSet
+	public sub LoadRecordSetNum(byref rs, byref index)
+		dim arr, obj, field, i
+		i = 0
+		set arr = new JSONArray
+		
+		while not rs.eof and i < index
+			set obj = new JSONobject
+		
+			for each field in rs.fields
+				obj.Add field.name, field.value
+			next
+			
+			arr.Push obj
+			
+			rs.movenext
+			
+			i = i + 1
+		wend
+		
+		set obj = nothing
+		
+		add JSON_ROOT_KEY, arr
+	end sub
+	
 	' Returns the value's type name (usefull for types not supported by VBS)
 	public function GetTypeName(byval value)
 		dim valueType
