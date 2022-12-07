@@ -23,19 +23,20 @@ $(function(){
        $(window).scrollTop(0)
     })
      $(document).on("click", "ul li:eq(1)", function(){
-         window.$router.to("/home")
+         localStorage.setItem("page",1)
+         window.$router.changeHash("/home")
     });
      $(document).on("click", "ul li:eq(2)", function(){
-           window.$router.to("/blog")
+           window.$router.changeHash("/blog")
     });
     $(document).on("click", "ul li:eq(3)", function(){
-          window.$router.to("/title")
+          window.$router.changeHash("/title")
     });
     $(document).on("click", "ul li:eq(4)", function(){
-          window.$router.to("/friend")
+          window.$router.changeHash("/friend")
     });
     $(document).on("click", ".daohang_a p:eq(1)", function(){
-          window.$router.to("/search")
+          window.$router.changeHash("/search")
     });
     $(document).on("click", ".daohang_a p:eq(2)", function(){
     if($('html').attr("color-mode")=='dark'){
@@ -86,14 +87,12 @@ $(function(){
             "transition":" 0.4s"
                         })
     }
-    
-    
     var routerMap = {
         "": {
             "redirect": "home"
         },
         "home": {
-            "path": "../myblog/one.html",
+            "path": "../myblog/center.html",
             "son": {}
         },
         "content": {
