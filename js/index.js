@@ -17,13 +17,17 @@ $(function(){
         })
     })
         /*点击导航栏或指定区域触发点击事件更改hash值*/
-    $(document).on("click", ".center", function(e){
+    $(document).on("click", ".center", function(){
         var text_Id = $(this).children('.valueid').text()
        window.$router.changeHash("/content?text_Id="+text_Id)
        $(window).scrollTop(0)
-    })
+    });
+    $("#rightbarh").on("click", ".zuijin", function(){
+        var zuijin_Id = $(this).children("span").text()
+        window.$router.changeHash("/content?text_Id="+zuijin_Id)
+       $(window).scrollTop(0)
+    });
      $(document).on("click", "ul li:eq(1)", function(){
-         localStorage.setItem("page",1)
          window.$router.changeHash("/home")
     });
      $(document).on("click", "ul li:eq(2)", function(){

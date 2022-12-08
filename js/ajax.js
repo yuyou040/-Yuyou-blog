@@ -49,4 +49,40 @@ $(function() {
         });
     }
     category()
+    
+    //获取最近文章的接口
+    function actlately() {
+        var url = 'http://192.168.47.1/myblog/asp/content.asp?articles=lately';
+        $.ajax(url, {
+            dataType: 'json',
+            async: false,
+            type: 'get',
+            headers: {
+                'Content-Type': undefined
+            },
+            timeout: 5000,
+            success: function(data) {
+               var actlately = data.AdminList 
+               var actlatelyhtml='';
+               $.each(actlately, function(i, value) {
+                   actlatelyhtml += `
+                        <div class="zuijin">
+                        	<p class="create_date" style="margin-bottom:10px;">${value.create_date}</p>
+                        	<p>${value.title}</p>
+                            <span style="display:none">${value.id}</span>
+                        	<hr />
+                        </div>
+                  `
+               })
+               
+               $("#rightbarh").html(actlatelyhtml)
+               
+            },
+            error: function(xhr, type, errorThrown) {
+                console.log(errorThrown)
+            }
+        });
+    }
+    actlately() 
+    $(".create_date").text($(".create_date").text().substring(0,10))
 })

@@ -25,6 +25,10 @@ if request.querystring("read")="blogmessage" then
     set rs = cn.execute("SELECT * FROM content where id ="& text_Id)
     jsonObj.LoadRecordset rs
 end if 
+if request.querystring("articles")="lately" then
+set rs = cn.execute("SELECT TOP 4 id,create_date,title FROM content")
+    jsonObj.LoadRecordset rs
+end if 
 rs.close
 cn.close
 set rs = nothing

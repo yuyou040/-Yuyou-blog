@@ -23,10 +23,10 @@ $(function() {
                     <div class="center">
                      <p style="display:none;" class="valueid">${value.id}</p>
 						<img  src= ${value.imgaes}/>
-						<h2>${value.title}</h2>
+						<h4>${value.title}</h4>
 						<p>${value.brief}</p>
 						<div class="xiaobiao">
-						<span>${value.create_date}<a>${value.label}</a></span>
+						<span>${value.create_date}</span><a>${value.label}</a>
 						<a href="#" class="jixuyuedu">继续阅读</a>
 						</div>
 					</div>
@@ -40,6 +40,7 @@ $(function() {
          });
      }
      content()
+     $(".center span").text($(".center span").text().substring(0,10))
      //分页代码构成
       var pagss =Number(localStorage.getItem("page"))
      $('.bootstrap-iso #pagination1').jqPaginator({
