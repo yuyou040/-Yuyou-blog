@@ -40,7 +40,6 @@ $(function() {
          });
      }
      content()
-     $(".center span").text($(".center span").text().substring(0,10))
      //分页代码构成
       var pagss =Number(localStorage.getItem("page"))
      $('.bootstrap-iso #pagination1').jqPaginator({

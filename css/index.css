@@ -144,7 +144,6 @@ h1,h2,h3,h4,h5,p,span{
 .right_bar_h {
     line-height: 30px;
     padding: 10px 5px;
-    margin-top: 20px;
     background-color: var(--surface3);
     width: 100%;
     transition: 0.4s;

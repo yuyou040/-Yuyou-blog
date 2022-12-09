@@ -38,10 +38,16 @@ $(function() {
             },
             timeout: 5000,
             success: function(data) {
-               var arry= Object.values(data);
-               for (var i = 0; i < arry.length; i++) {
-                   $('#asd').append($('<li>' + arry[i] + '</li>'))
-               }
+                console.log(data)
+                var categoryhtml=`
+                    <li>${data.technology}</li>
+                    <li>${data.note}</li>
+                    <li>${data.creation}</li>
+                    <li>${data.selfwords}</li>
+                    <li>${data.share}</li>
+                    <li>${data.others}</li>
+                `
+                $("#asd").html(categoryhtml)
             },
             error: function(xhr, type, errorThrown) {
                 console.log(errorThrown)
@@ -64,6 +70,7 @@ $(function() {
             success: function(data) {
                var actlately = data.AdminList 
                var actlatelyhtml='';
+               console.log(actlately.create_date)
                $.each(actlately, function(i, value) {
                    actlatelyhtml += `
                         <div class="zuijin">
@@ -84,5 +91,4 @@ $(function() {
         });
     }
     actlately() 
-    $(".create_date").text($(".create_date").text().substring(0,10))
 })
