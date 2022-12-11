@@ -14,7 +14,7 @@ set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
 if request.querystring("action")="read_content" then
     set rs = server.createobject("adodb.recordset")
-    sql="select * from content"
+    sql="select * from content order by id desc"
     rs.open sql,cn,1,3
     rs.pagesize=6
     rs.absolutepage=pageId
@@ -26,7 +26,7 @@ if request.querystring("read")="blogmessage" then
     jsonObj.LoadRecordset rs
 end if 
 if request.querystring("articles")="lately" then
-set rs = cn.execute("SELECT TOP 4 id,create_date,title FROM content")
+set rs = cn.execute("SELECT TOP 4 id,create_date,title FROM content order by id desc")
     jsonObj.LoadRecordset rs
 end if 
 rs.close

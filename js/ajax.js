@@ -12,7 +12,7 @@ $(function() {
             timeout: 5000,
             success: function(data) {
                 var title = data.data
-                for (var i = 0; i < title.length; i++) {
+                for (var i = 0; i < 9; i++) {
                     $('.left_bar_f ul').append($('<li>' + title[i] + '</li>'))
                 }
                 $('.left_bar_f ul li').css({
@@ -38,7 +38,6 @@ $(function() {
             },
             timeout: 5000,
             success: function(data) {
-                console.log(data)
                 var categoryhtml=`
                     <li>${data.technology}</li>
                     <li>${data.note}</li>
@@ -56,6 +55,33 @@ $(function() {
     }
     category()
     
+    //获取归档api
+    function archive() {
+        var url = 'http://192.168.47.1/myblog/asp/category.asp?action=create_date';
+        $.ajax(url, {
+            dataType: 'json',
+            async: true,
+            type: 'get',
+            headers: {
+                'Content-Type': undefined
+            },
+            timeout: 5000,
+            success: function(data) {
+                var archivehtml=`
+                    <li>${data.erer}</li>
+                    <li>${data.erli}</li>
+                    <li>${data.erling}</li>
+                    <li>${data.yijiu}</li>
+                    <li>${data.yiba}</li>
+                `
+                $("#zxc").html(archivehtml)
+            },
+            error: function(xhr, type, errorThrown) {
+                console.log(errorThrown)
+            }
+        });
+    }
+    archive()
     //获取最近文章的接口
     function actlately() {
         var url = 'http://192.168.47.1/myblog/asp/content.asp?articles=lately';

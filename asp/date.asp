@@ -300,8 +300,8 @@ NongliDayStr = NongliDayStr&DayName(curDay)
 
 response.Write GongliStr
 response.Write WeekdayStr
-response.Write NongliStr
-response.Write NongliDayStr
+'response.Write NongliStr
+'response.Write NongliDayStr
 %>
 
 <%

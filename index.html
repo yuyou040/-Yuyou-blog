@@ -23,7 +23,7 @@
 								$("#dates").load("asp/date.asp")
 							</script>
 						</p>
-						<p class="easyui-linkbutton"><img src="img/search.png" style="width: 25px;height: 25px;margin-left: 120px;cursor: pointer;"></p>
+						<p class="easyui-linkbutton"><img src="img/search.png" style="width: 25px;height: 25px;margin-left: 240px;cursor: pointer;"></p>
 						<p class="easyui-linkbutton"><img src="img/deng.png" style="width: 30px;height: 30px;margin-left: 25px;position: relative;cursor: pointer;"></p>
                         <p class="easyui-linkbutton"><img src="img/houtai.jpg" style="width: 25px;height: 25px;margin-left: 25px;position: relative;cursor: pointer;"></p>
 					</ul>
@@ -84,20 +84,27 @@
 			</div>
 			<div class="right_bar_c">
 				<p>归档</p>
-				<ul>
+                <div style="width: 90%;">
+                    <div>
+				<ul id="mnb">
 					<li>2022</li>
 					<li>2021</li>
 					<li>2020</li>
 					<li>2019</li>
 					<li>2018</li>
 				</ul>
+                </div>
+                <div style="display: flex;justify-content: end;">
+                <ul id="zxc" style=""></ul>
+                </div>
 			</div>
+            </div>
 		</div>
         </div>
 		</div>
         </div>
         
-        <div id="footer">
+        <div id="footer" class="lazyload">
         	<p style="margin-top: 50px;">Copyright© Yuyou's&nbsp;blog</p>
         	<p>Powered by Classic Asp & JQuery Designed by Yuyou&Ropex</p>
         </div>

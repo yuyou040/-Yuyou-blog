@@ -91,6 +91,14 @@ $(function(){
             "transition":" 0.4s"
                         })
     }
+// 等待数据加载完再渲染页面
+document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.body.style.display = "block";
+            } else {
+                document.body.style.display = "none";
+            };
+        };
     var routerMap = {
         "": {
             "redirect": "home"

@@ -8,7 +8,7 @@
  	conn.open
  	set rs = server.createobject("adodb.recordset")
  	'打开表
- 	sql="select distinct label from content"
+ 	sql="select label from content order by id desc"
  	action=request.queryString("action")
 	rs.open sql,conn,1,3
 	'读取数据库
