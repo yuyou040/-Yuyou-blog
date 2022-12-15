@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        </style>
         <div class="superbox">
             <div class="searchwenzhang">
                 <from>
@@ -21,57 +22,74 @@
             <div class="atriclelist">
                 <div class="createwenzhang">
                     <p>文章管理</p>
-                    <button class="creat">新建文章</button>
+                    <div class="creat">
+                                    <button  style="background-color: rgba(162, 166, 255, 0.9); 
+                                                    border: 1px solid transparent;
+                                                    outline: none;   
+                                                    padding: 10px 10px 10px 10px;
+                                                    margin-top: -20px;
+                                                    margin-bottom: 20px;
+                                                    margin-right: 25px;
+                                                    font-weight: bold;
+                                                    color: white;
+                                                    border-radius: 2.5px;
+                                                    transition:0.3s;">
+                                                    新建文章
+                                    </button>
+                    </div>
                 </div>
-                <table>
-                <tr style="background-color: rgba(0, 0, 0, 0.2);">
-                    <th>ID</th>
-                    <th>标题</th>
-                    <th>分类</th>
+                 <table>
+                <tr style="background-color:rgba(1, 64, 142, 0.6); color:white;">
+                    <th style="padding-left: 20px;">ID</th>
+                    <th style="padding: 0 70px 0 0;">标题</th>
+                    <th style="padding: 0 40px 0 0;">分类</th>
                     <th>创建时间</th>
-                    <th>顶置</th>
-                    <th>浏览量</th>
-                    <th>操作</th>
+                    <th>编辑</th>
+                    <th>删除</th>
                 </tr>
-                <tr>
-                    <td>ID</td>
-                    <td>标题</td>
-                    <td>分类</td>
-                    <td>创建时间</td>
-                    <td>顶置</td>
-                    <td>浏览量</td>
-                    <td>操作</td>
-                </tr>
-                <tr>
-                    <td>ID</td>
-                    <td>标题</td>
-                    <td>分类</td>
-                    <td>创建时间</td>
-                    <td>顶置</td>
-                    <td>浏览量</td>
-                    <td>操作</td>
-                </tr>
-                <tr>
-                    <td>ID</td>
-                    <td>标题</td>
-                    <td>分类</td>
-                    <td>创建时间</td>
-                    <td>顶置</td>
-                    <td>浏览量</td>
-                    <td>操作</td>
-                </tr>
-                <tr>
-                    <td>ID</td>
-                    <td>标题</td>
-                    <td>分类</td>
-                    <td>创建时间</td>
-                    <td>顶置</td>
-                    <td>浏览量</td>
-                    <td>操作</td>
-                </tr>
+                <table id="tdlist">
                 </table>
+                </table>
+                
             </div>
         </div>
     </body>
-
+    <script type="text/javascript">
+        $(function(){
+            function Article() {
+                var url = 'http://192.168.47.1/myblog/asp/content.asp?admin=Article';
+                $.ajax(url, {
+                    dataType: 'json',
+                    async: false,
+                    type: 'get',
+                    headers: {
+                        'Content-Type': undefined
+                    },
+                    timeout: 5000,
+                    success: function(data) {
+                      var Article = data.AdminList
+                      var Articlehtml=''
+                      $.each(Article, function(i, value) {
+                          Articlehtml += `
+                               <tr style="background-color: rgba(1, 64, 142, 0.1);">
+                                   <td style="padding-left:10px;text-align:center;">${value.id}</td>
+                                   <td style="padding-left:50px;"><p class="tdtitle">${value.title}</p></td>
+                                   <td style="padding-right:50px;">${value.class}</td>
+                                   <td style="padding-right:140px;">${value.create_date}</td>
+                                   <td><button>编辑</button></td>
+                                   <td><button>删除</button></td>
+                               </tr>
+                         `
+                      })
+                      $('#tdlist').html(Articlehtml)
+                    },
+                    error: function(xhr, type, errorThrown) {
+                        console.log(errorThrown)
+                    }
+                });
+            }
+            Article()
+        })
+    </script>
 </html>
+

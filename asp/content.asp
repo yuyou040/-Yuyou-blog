@@ -29,6 +29,14 @@ if request.querystring("articles")="lately" then
 set rs = cn.execute("SELECT TOP 4 id,create_date,title FROM content order by id desc")
     jsonObj.LoadRecordset rs
 end if 
+if request.querystring("guidang")="blog" then
+set rs = cn.execute("SELECT id,create_date,title,imgaes FROM content order by id desc")
+    jsonObj.LoadRecordset rs
+end if 
+if request.querystring("admin")="Article" then
+set rs = cn.execute("SELECT id,create_date,title,class FROM content order by id desc")
+    jsonObj.LoadRecordset rs
+end if 
 rs.close
 cn.close
 set rs = nothing

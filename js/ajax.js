@@ -96,7 +96,6 @@ $(function() {
             success: function(data) {
                var actlately = data.AdminList 
                var actlatelyhtml='';
-               console.log(actlately.create_date)
                $.each(actlately, function(i, value) {
                    actlatelyhtml += `
                         <div class="zuijin">
