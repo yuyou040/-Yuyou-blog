@@ -44,6 +44,10 @@ $(function() {
         "pictures": {
             "path": "../admin/pictures.html",
             "son": {}
+        },
+        "ueditor":{
+            "path": "../admin/ueditor.html",
+            "son": {}
         }
     }
     window.$router.initial(routerMap)

@@ -42,6 +42,16 @@ $(function(){
     $(document).on("click", ".daohang_a p:eq(1)", function(){
           window.$router.changeHash("/search")
     });
+    $("#mnb").on("click", "li", function(){
+        var year = $(this).text()
+         window.$router.changeHash("/blog?year="+year)
+         $(window).scrollTop(0)
+    });
+    
+    
+    
+    
+    //切换夜间模式的方法
     $(document).on("click", ".daohang_a p:eq(2)", function(){
     if($('html').attr("color-mode")=='dark'){
         document.documentElement.setAttribute("color-mode", "light");
@@ -92,13 +102,13 @@ $(function(){
                         })
     }
 // 等待数据加载完再渲染页面
-document.onreadystatechange = function () {
-            if (document.readyState == "complete") {
-                document.body.style.display = "block";
-            } else {
-                document.body.style.display = "none";
-            };
-        };
+// document.onreadystatechange = function () {
+//             if (document.readyState == "complete") {
+//                 document.body.style.display = "block";
+//             } else {
+//                 document.body.style.display = "none";
+//             };
+//         };
     var routerMap = {
         "": {
             "redirect": "home"

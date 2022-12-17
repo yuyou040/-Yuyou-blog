@@ -2,11 +2,12 @@
 <%response.ContentType = "application/json"%>
 <!--#include file="jsonObject.class.asp" -->
 <%
-dim str_json,text_Id,objErr,jsonObj,jsonString,outputObj,cn,rs,pageId
+dim str_json,text_Id,objErr,jsonObj,jsonString,outputObj,cn,rs,pageId,guidangyear,delid
 text_Id = request.querystring("text_Id")
 pageId=request.querystring("pageId")
+guidangyear=request.querystring("year")
+delid=request.querystring("delid")
 'ASP ASPError ASPDescription 属性返回错误的详细描述。当 Server.GetLastError 被调用时，ASPError 对象就会被创建，因此只能通过使用 Server.GetLastError 方法来访问错误信息。ASPError 对象的属性描述如下（所有属性都是可读的）
-
 set objErr=Server.GetLastError()
 set jsonObj = new JSONobject  '//创建对象
 ' 从ADODB.Recordset加载记录集
@@ -30,13 +31,19 @@ set rs = cn.execute("SELECT TOP 4 id,create_date,title FROM content order by id 
     jsonObj.LoadRecordset rs
 end if 
 if request.querystring("guidang")="blog" then
-set rs = cn.execute("SELECT id,create_date,title,imgaes FROM content order by id desc")
-    jsonObj.LoadRecordset rs
+    if guidangyear <> "null" then
+       set rs = cn.execute("SELECT id,create_date,title,imgaes FROM content where create_date like '%"&guidangyear&"%' order by id desc")
+       jsonObj.LoadRecordset rs
+    else 
+       set rs = cn.execute("SELECT id,create_date,title,imgaes FROM content order by id desc")
+       jsonObj.LoadRecordset rs
+    end if 
 end if 
 if request.querystring("admin")="Article" then
 set rs = cn.execute("SELECT id,create_date,title,class FROM content order by id desc")
     jsonObj.LoadRecordset rs
-end if 
+end if  
+
 rs.close
 cn.close
 set rs = nothing

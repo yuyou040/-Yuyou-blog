@@ -54,13 +54,12 @@ $(function() {
         });
     }
     category()
-    
     //获取归档api
     function archive() {
         var url = 'http://192.168.47.1/myblog/asp/category.asp?action=create_date';
         $.ajax(url, {
             dataType: 'json',
-            async: true,
+            async: false,
             type: 'get',
             headers: {
                 'Content-Type': undefined
