@@ -41,4 +41,15 @@ $(function(){
                });
            }
            guidang()
+           // $(".guidangboxlist").on("click", ".gdtitle", function(){
+           //     alert(1)
+           //     // var text_Id = $(this).children('.valueid').text()
+           //    // window.$router.changeHash("/content?text_Id="+text_Id)
+           //    // $(window).scrollTop(0)
+           // });
+           $(".gdtitle").click(function(){
+               var text_Id = $(this).siblings("span").text()
+               window.$router.changeHash("/content?text_Id="+text_Id)
+               $(window).scrollTop(0)
+           })
 })

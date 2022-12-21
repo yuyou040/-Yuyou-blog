@@ -40,6 +40,10 @@ ul li{
     padding: 0;
     cursor: pointer;
 }
+
+h1,h2,h3,h4,h5,p,span,tr,td,th,button{
+    cursor: pointer;
+}
 #leftdaohang ul{
     width: 210px;
 }

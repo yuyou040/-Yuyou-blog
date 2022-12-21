@@ -18,7 +18,7 @@ set cn = server.createobject("adodb.connection")
 cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
 'set rs = cn.execute("SELECT * FROM content")
 if request.querystring("action")="read_category" then
-category_array = Array("'selfwords'","'technology'","'note'","'creation'","'share'","'others'")
+category_array = Array("'自言语'","'技术向'","'笔记本'","'创作集'","'分享'","'编程'")
 category_array_json = Array("selfwords","technology","note","creation","share","others")
 jsonObj.defaultPropertyName = "Category"
 for i = 0 to ubound(category_array)

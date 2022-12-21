@@ -62,21 +62,21 @@ $(function() {
 
     //点击关闭
     $("#close").click(function() {
-        $('#commitModal').hide();
+       $('#commitModal').fadeToggle("slow");
     });
 
     //点击取消
     $("#cancel").click(function() {
-        $('#commitModal').hide();
+       $('#commitModal').fadeToggle("slow");
     });
     //点击确定
     $("#sure").click(function() {
-        $('#commitModal').hide();
+        $('#commitModal').fadeToggle("slow");
         window.$router.changeHash("/ueditor")
     })
     //点击新增文章
     $(".creat button").click(function() {
-        $('#commitModal').show()
+        $('#commitModal').fadeToggle("slow");
     })
     
     //删除blog

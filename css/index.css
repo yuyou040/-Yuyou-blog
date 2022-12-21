@@ -3,7 +3,7 @@ html[color-mode='light'] {
     --surface2: url(../img/bg.jpg);
     --surface3: #ffffff;
     --touying: #d3d3d3;
-    --element1: #111111;
+    --element1: #344356;
     --element2: #222222;
     --element3: #333333;
     --elementInverse: #eee;
@@ -74,6 +74,7 @@ a {
     text-decoration: none;
     outline: none;
     cursor: pointer;
+    font-weight: 600;
 }
 h1,h2,h3,h4,h5,p,span{
     cursor: pointer;
@@ -95,14 +96,12 @@ h1,h2,h3,h4,h5,p,span{
     float: left;
     margin-right: 20px;
     padding: 6px;
+    font-weight: 600;
+     font-size: 18px;
 }
 
 .daohang_a ul li:hover {
     color: orange !important;
-}
-
-.daohang_a ul {
-
 }
 
 #dates {
@@ -114,6 +113,7 @@ h1,h2,h3,h4,h5,p,span{
     line-height: 63px;
     padding: 0 100px 0 80px;
     margin-left: 20px;
+    font-weight: 600;
 }
 
 .easyui-linkbutton {
@@ -129,17 +129,41 @@ h1,h2,h3,h4,h5,p,span{
     padding-top: 2.5rem;
 }
 
+@media screen and (min-width: 1201px) { 
+
 #left_bar {
     margin-right: 25px;
-    width: 16.25rem;
+    width: 20vw;
     height: 100%;
 }
 
 #right_bar {
-    width: 16.25rem;
+    width:20vw;
     height: 100%;
     margin-left: 20px;
 }
+#center_bar {
+    width: 45vw;
+}
+} 
+@media screen and (min-width: 1401px) { 
+
+#left_bar {
+    margin-right: 25px;
+    width: 16vw;
+    height: 100%;
+}
+
+#right_bar {
+    width:16vw;
+    height: 100%;
+    margin-left: 20px;
+}
+#center_bar {
+    width: 36vw;
+}
+} 
+/* css注释：设置了浏览器宽度不小于1201px时 abc 显示1200px宽度 */ 
 
 .right_bar_h {
     line-height: 30px;
@@ -371,11 +395,12 @@ h1,h2,h3,h4,h5,p,span{
     font-weight: bold;
     
 }
-#center_bar {
-    width: 605px;
+.left_bar_f ul li:before{
+    content:"#";
+    color: #0000ff;
 }
 
-.center {
+.center ,#center{
     flex: 1;
     padding-bottom: 0.625rem;
     margin-bottom: 2.1875rem;
@@ -389,9 +414,6 @@ h1,h2,h3,h4,h5,p,span{
 
 .center img {
     border-radius: 0.46875rem;
-    width: 100%;
-    height: 17.5rem;
-
 }
 
 .center h4,
@@ -409,6 +431,10 @@ p {
 }
 .center span{
     margin-right: 5px;
+}
+.zuiclass img{
+    width: 100%;
+    height: 230px;
 }
 .center p {
     margin-left: 30px;
@@ -445,7 +471,7 @@ p {
 
 
 /* 内容区域css */
-#neirong {
+.neirong {
     margin: auto;
     width: 90%;
     text-align: left;
@@ -453,21 +479,18 @@ p {
     line-height: 35px;
 }
 
-#neirong a {
+.neirong a {
     color: blue;
 }
 
-#neirong ul li {
+.neirong ul li {
     list-style: disc;
 }
 
-#neirong ul li a {
+.neirong ul li a {
     color: blue;
 }
 
-#neirong img {
-    margin-top: 1.25rem;
-}
 
 .xiaobiao {
     padding-top: 1.25rem;
@@ -487,6 +510,7 @@ p {
     width: 100%;
     height:200px;
     background-color: #363636;
+    margin-top: 50px;
 }
 #footer p{
         margin-bottom: 20px;
@@ -656,4 +680,22 @@ p {
 	margin-left: 40px; 
     color:var(--element1);
     transition: 0.4s;
+}
+
+/* 分类页面css */
+
+#classify{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+    background-color: var(--surface3);
+    border-radius: 15px; 
+    transition: 0.4s;
+    box-shadow: var(--touying) 0px 4px 10px 0px;
+}
+#classify p{
+    display: inline;
+    margin-left:20px ;
+    line-height: 100px;
+    font-size: 20px;
 }

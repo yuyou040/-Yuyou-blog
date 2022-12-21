@@ -142,6 +142,11 @@
                     var rand = parseInt(Math.random() * (x - y + 1) + y);
                     $(this).addClass("tags" + rand);
                 });
+                $("#tags p").click(function(){
+                    var label_id = $(this).text()
+                    window.$router.changeHash("/label?label_id="+label_id)
+                    $(window).scrollTop(0)
+                })
             })
         </script>
 

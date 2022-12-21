@@ -47,7 +47,16 @@ $(function(){
          window.$router.changeHash("/blog?year="+year)
          $(window).scrollTop(0)
     });
-    
+    $("#qwe").on("click", "li", function(){
+        var class_id = $(this).text()
+         window.$router.changeHash("/classify?class_id="+class_id)
+         $(window).scrollTop(0)
+    });
+    $(".left_bar_f").on("click", "ul li", function(){
+        var label_id = $(this).text()
+         window.$router.changeHash("/label?label_id="+label_id)
+         $(window).scrollTop(0)
+    });
     
     
     
@@ -135,7 +144,13 @@ $(function(){
         },
         "search":{
           "path":"../myblog/search.html",
-        }       
+        }    ,
+        "classify":{
+          "path":"../myblog/classify.html",
+        }  ,
+        "label":{
+          "path":"../myblog/label.html",
+        }
     }
     window.$router.initial(routerMap)
 }) 
