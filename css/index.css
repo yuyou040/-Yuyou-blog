@@ -150,17 +150,17 @@ h1,h2,h3,h4,h5,p,span{
 
 #left_bar {
     margin-right: 25px;
-    width: 16vw;
+    width: 15vw;
     height: 100%;
 }
 
 #right_bar {
-    width:16vw;
+    width:15vw;
     height: 100%;
     margin-left: 20px;
 }
 #center_bar {
-    width: 36vw;
+    width: 37vw;
 }
 } 
 /* css注释：设置了浏览器宽度不小于1201px时 abc 显示1200px宽度 */ 
@@ -275,6 +275,7 @@ h1,h2,h3,h4,h5,p,span{
     height: 6.25rem;
     box-shadow: 5px 5px 15px var(--touying);
     transition: 0.4s;
+    margin-top: 20px;
 }
 .left_bar_h img:hover{
     transition: linear 0.8s;
@@ -289,13 +290,14 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .left_bar_h ul {
-    margin-top: 0.625rem;
+    margin-top: 20px;
     color: var(--element1);
     text-align: center;
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     transition: 0.4s;
+    margin-bottom: 20px;
 }
 
 .left_bar_h li {
@@ -401,7 +403,6 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .center ,#center{
-    flex: 1;
     padding-bottom: 0.625rem;
     margin-bottom: 2.1875rem;
     width: 100%;
@@ -469,38 +470,6 @@ p {
 }
 
 
-
-/* 内容区域css */
-.neirong {
-    margin: auto;
-    width: 90%;
-    text-align: left;
-    font-size: 1rem;
-    line-height: 35px;
-}
-
-.neirong a {
-    color: blue;
-}
-
-.neirong ul li {
-    list-style: disc;
-}
-
-.neirong ul li a {
-    color: blue;
-}
-
-
-.xiaobiao {
-    padding-top: 1.25rem;
-    margin: auto;
-    width: 90%;
-}
-
-.jixuyuedu {
-    float: right;
-}
 
 #footer{
     float: left;
