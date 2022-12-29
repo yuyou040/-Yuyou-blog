@@ -397,7 +397,7 @@ td{
     color: #fff;
     display: inline-block;
     font-size: 12px;
-    padding: 2px 5px;
+    padding: 10px 20px;
     text-decoration: none;
     text-align: center;
     min-width: 60px;
@@ -411,7 +411,7 @@ td{
     color: #428bca;
     display: inline-block;
     font-size: 12px;
-    padding: 2px 5px;
+    padding: 10px 20px;
     text-decoration: none;
     text-align: center;
     min-width: 60px;
@@ -425,4 +425,23 @@ td{
 .modal-header {
     border-bottom: #eee solid 1px;
     height:20px;
+}
+#tijiao{
+    font-size: 18px;
+}
+#tijiao p{
+    margin-top: 18px; 
+}
+#titletxt {
+    outline:none;
+    border:1px gray solid;
+    border-radius: 3.5px;
+    height: 30px;
+    width: 200px;
+    margin-top: 20px; 
+    text-indent: 20px;
+    font-size: 18px;
+}
+#tijiao select{
+   
 }

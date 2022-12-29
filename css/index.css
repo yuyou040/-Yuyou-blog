@@ -83,8 +83,8 @@ h1,h2,h3,h4,h5,p,span{
     clear: both;
 }
 .daohang_a li:nth-child(2) {
-    background-color: white;
-    color: black;
+    background-color: rgba(255,255,255,0.3);
+    color: orange;
 }
 
 .daohang_a ul li {
@@ -488,6 +488,28 @@ p {
          text-align: center;
 }
 
+
+
+/* 内容区域css */
+.neirong {
+    margin: auto;
+    width: 90%;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 35px;
+}
+
+.neirong a {
+    color: blue;
+}
+
+.neirong ul li {
+    list-style: disc;
+}
+
+.neirong ul li a {
+    color: blue;
+}
 /* 归档css */
 #guidangbox {
     width: 100%

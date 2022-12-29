@@ -63,14 +63,19 @@
                     <span class="btn-close" id="close" aria-hidden="true">×</span>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                    文章标题：<input type="text" name="title" value="请输入文章标题"><br>
-                    文章分类：<select name="fenlei" >
-                        <option value="">请选择文章分类</option>
-                        <option value="">xxx</option>
-                        <option value="">xxx</option>
+                    <form enctype="multipart/form-data" id="tijiao">
+                    文章标题：<input type="text" name="title" placeholder="请输入文章标题" id="titletxt"><br>
+                    文章分类：<select name="fenlei">
+                        <option disabled selected hidden>请选择文章分类</option>
+                        <option value="技术向">技术向</option>
+                        <option value="笔记本">笔记本</option>
+                        <option value="创作集">创作集</option>
+                        <option value="自言语">自言语</option>
+                        <option value="分享">分享</option>
+                        <option value="编程">编程</option>
                          </select>
                     <p>创建时间：创建时间会帮您自动生成哒~</p>
+                    <input  type="file" id="file" name="file"/>
                     </form>
                 </div>
                 <div class="modal-footer">

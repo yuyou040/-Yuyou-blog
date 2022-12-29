@@ -11,9 +11,9 @@ $(function(){
             "border":"none"
         })
         $(this).css({
-            "background":"white",
+            "background":"rgba(255,255,255,0.3)",
             "border":"white",
-            "color":"black"
+            "color":"orange"
         })
     })
         /*点击导航栏或指定区域触发点击事件更改hash值*/
