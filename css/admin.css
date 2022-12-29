@@ -403,6 +403,7 @@ td{
     min-width: 60px;
     position: relative;
     transition: color .1s ease;
+    margin-right: 20px;
 }
 .btn-new{
     background: #fff;
@@ -417,6 +418,7 @@ td{
     min-width: 60px;
     position: relative;
     transition: color .1s ease;
+    margin-right: 80px;
 }
 .modal-header,
 .modal-footer {
@@ -443,5 +445,12 @@ td{
     font-size: 18px;
 }
 #tijiao select{
-   
+   outline:none;
+   border:1px gray solid;
+   border-radius: 3.5px;
+   height: 30px;
+   width: 200px;
+   margin-top: 20px; 
+   text-indent: 20px;
+   font-size: 18px;
 }

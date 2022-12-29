@@ -68,14 +68,8 @@ $(function() {
         return url;
     }
 
-    function image2Base64(img) {
-        var canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, img.width, img.height);
-        var dataURL = canvas.toDataURL("image/png");
-        return dataURL;
+    function avoidJump() {
+        return false;
     }
 
     function base64String(file) {
@@ -107,29 +101,6 @@ $(function() {
     });
     //点击确定
     $("#sure").click(function() {
-        var base64 = "";
-        var form = document.getElementById("tijiao")
-        var file = document.getElementById("file")
-        var fileName = file.files[0].name; //获取文件名
-        var filePath = file.value; //文件fake路径
-        var objURL = getObjectURL(file.files[0]); //获取文件的真实路径
-        var formData = new FormData();
-        var title = $("#titletxt").val()
-        var fenlei = $("#tijiao select option:selected").val()
-        formData.append("title", title)
-        formData.append("fenlei", fenlei)
-        // base64String(file.files[0])
-        // .then((base64) => {
-        //     formData.append("file", base64)
-        //     console.log(formData.get('file'))
-        // })
-        // .then(()=>{
-
-        // })
-        var img = new Image();
-        img.src=objURL
-        base64=image2Base64(img)
-        console.log(base64)
         $('#commitModal').fadeToggle("slow");
         //window.$router.changeHash("/ueditor")
     })
