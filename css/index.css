@@ -539,19 +539,25 @@ p {
 .gdtime {
     color: var(--element1);
     transition: 0.4s;
+    margin-top: 20px;
 }
 
 .gdtitle {
     font-size: 20px;
     line-height: 60px;
+    width: 60%;
+    margin-right: 200px;
+    overflow-x: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
 .guidangboxlist img {
     display: block;
     float: right;
-    width: 150px;
+    width: 180px;
     height: 120px;
-    margin-top: -97px;
+    margin-top: -100px;
     border-radius: 7.5px;
 }
 

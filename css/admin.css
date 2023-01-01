@@ -365,7 +365,7 @@ td{
     background: #fefefe;
     border: #333 solid 1px;
     width:30%;
-    height:500px;
+    height:600px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -418,7 +418,7 @@ td{
     min-width: 60px;
     position: relative;
     transition: color .1s ease;
-    margin-right: 80px;
+    margin-right: 20px;
 }
 .modal-header,
 .modal-footer {
@@ -430,6 +430,7 @@ td{
 }
 #tijiao{
     font-size: 18px;
+    text-align: center;
 }
 #tijiao p{
     margin-top: 18px; 
@@ -453,4 +454,24 @@ td{
    margin-top: 20px; 
    text-indent: 20px;
    font-size: 18px;
+}
+#tijiao textarea{
+   outline:none;
+   border:1px gray solid;
+   border-radius: 3.5px;
+   height: 200px;
+   width: 200px;
+   margin-top: 20px;
+   font-size: 18px;
+   margin-left: 50px;
+}
+#biaoqian{
+    outline:none;
+    border:1px gray solid;
+    border-radius: 3.5px;
+    height: 30px;
+    width: 200px;
+    margin-top: 20px; 
+    text-indent: 20px;
+    font-size: 18px;
 }

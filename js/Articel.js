@@ -68,9 +68,6 @@ $(function() {
         return url;
     }
 
-    function avoidJump() {
-        return false;
-    }
 
     function base64String(file) {
         return new Promise((resolve, reject) => {
@@ -101,11 +98,20 @@ $(function() {
     });
     //点击确定
     $("#sure").click(function() {
-        $('#commitModal').fadeToggle("slow");
+        var fileInput = $('#file').get(0).files[0];
+        if($("#titletxt").val()||$("#tijiao select").val()|| fileInput){
+            $("#tijiao").submit()
+            $('#commitModal').fadeToggle("slow");
+        }
+        else{
+            alert("必填项不能为空")
+        }
+        setTimeout("location.reload(true)", 100 )
         //window.$router.changeHash("/ueditor")
     })
     //点击新增文章
     $(".creat button").click(function() {
+        $("#tijiao")[0].reset()
         $('#commitModal').fadeToggle("slow");
     })
 

@@ -9,7 +9,7 @@
         <div class="superbox">
             <div class="searchwenzhang">
                 <from>
-                    标题:<input type="text" class="text"/>
+                    标题:<input type="text" class="text" />
                     分类:<select name="">
                         <option value=""></option>
                         <option value="">xxx</option>
@@ -23,7 +23,7 @@
                 <div class="createwenzhang">
                     <p>文章管理</p>
                     <div class="creat">
-                                    <button  style="background-color: rgba(67, 95, 255, 0.8); 
+                        <button style="background-color: rgba(67, 95, 255, 0.8); 
                                                     border: 1px solid transparent;
                                                     outline: none;   
                                                     padding: 10px 10px 10px 10px;
@@ -34,57 +34,65 @@
                                                     color: white;
                                                     border-radius: 2.5px;
                                                     transition:0.3s;">
-                                                    新建文章
-                                    </button>
+                            新建文章
+                        </button>
                     </div>
                 </div>
-                 <table>
-                     <thead>
-                <tr style="background-color:rgba(1, 64, 142, 0.6); color:white;" id="onetr">
-                    <th style="padding-left:40px;">ID</th>
-                    <th style="padding-left:60px;">标题</th>
-                    <th>分类</th>
-                    <th>创建时间</th>
-                    <th>编辑</th>
-                    <th>删除</th>
-                </tr>
-                </thead>
-                <tbody id="tdlist">
-                </tbody> 
+                <table>
+                    <thead>
+                        <tr style="background-color:rgba(1, 64, 142, 0.6); color:white;" id="onetr">
+                            <th style="padding-left:40px;">ID</th>
+                            <th style="padding-left:60px;">标题</th>
+                            <th>分类</th>
+                            <th>创建时间</th>
+                            <th>编辑</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tdlist">
+                    </tbody>
                 </table>
-                
+
             </div>
         </div>
-         <!-- 新建文章模态框 -->
+        <!-- 新建文章模态框 -->
         <div class="modal" id="commitModal" aria-hidden="true">
-        
+
             <div class="modal-dialog">
                 <div class="modal-header">
                     <span class="btn-close" id="close" aria-hidden="true">×</span>
                 </div>
                 <div class="modal-body">
-                    <form action="../asp/upload.asp?act=simpleupload" method="post" enctype="multipart/form-data" id="tijiao" onclick="return avoidJump()">
-                    文章标题：<input type="text" name="form1" placeholder="请输入文章标题" id="titletxt"><br>
-                    文章分类：<select name="fenlei">
-                        <option disabled selected hidden>请选择文章分类</option>
-                        <option value="技术向">技术向</option>
-                        <option value="笔记本">笔记本</option>
-                        <option value="创作集">创作集</option>
-                        <option value="自言语">自言语</option>
-                        <option value="分享">分享</option>
-                        <option value="编程">编程</option>
-                         </select>
-                    <p>创建时间：创建时间会帮您自动生成哒~</p>
-                    <input  type="file" id="file" name="file1"/>
-                        <button  class="btn" id="sure">确 定</button>
+                    <form action="../asp/upload.asp?act=simpleupload" method="post" enctype="multipart/form-data"
+                        id="tijiao" target="myIframe">
+                        文章标题：<input type="text" name="title" placeholder="请输入文章标题" id="titletxt"><br>
+                        文章分类：<select name="fenlei">
+                            <option disabled selected hidden>请选择文章分类</option>
+                            <option value="技术向">技术向</option>
+                            <option value="笔记本">笔记本</option>
+                            <option value="创作集">创作集</option>
+                            <option value="自言语">自言语</option>
+                            <option value="分享">分享</option>
+                            <option value="编程">编程</option>
+                        </select>
+                        <br />
+                        文章标签：<input type="text" name="biaoqian" placeholder="自定义标签" id="biaoqian">
+                        <br />
+                        简介:<textarea placeholder="文章简介" id="jianjie" name="jianjie"></textarea>
+                        <br />
+                        <p>创建时间：创建时间会帮您自动生成</p>
+                        <br />
+                        <input type="file" id="file" name="file1" />
+                        <iframe id="myIframe" name="myIframe" style="display: none;"></iframe>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn-new" id ='cancel'>取 消</button>
+
+                    <button class="btn-new" id='cancel'>取 消</button>
+                    <button class="btn" id="sure">确 定</button>
                 </div>
             </div>
         </div>
     </body>
     <script type="text/javascript" src="../js/Articel.js"></script>
 </html>
-
