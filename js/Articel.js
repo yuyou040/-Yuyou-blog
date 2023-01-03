@@ -19,7 +19,7 @@ $(function() {
                                    <td style="padding-left:60px;"><p class="tdtitle">${value.title}</p></td>
                                    <td>${value.class}</td>
                                    <td>${value.create_date}</td>
-                                   <td><button style="background-color:rgba(35, 183, 166, 0.8);">编辑</button></td>
+                                   <td><button class="edit" style="background-color:rgba(35, 183, 166, 0.8);">编辑</button></td>
                                    <td><button class="delshan" style="background-color:rgba(255, 0, 0, 0.6);">删除</button></td>
                                </tr>
                          `
@@ -99,14 +99,13 @@ $(function() {
     //点击确定
     $("#sure").click(function() {
         var fileInput = $('#file').get(0).files[0];
-        if($("#titletxt").val()||$("#tijiao select").val()|| fileInput){
+        if ($("#titletxt").val() || $("#tijiao select").val() || fileInput) {
             $("#tijiao").submit()
             $('#commitModal').fadeToggle("slow");
-        }
-        else{
+        } else {
             alert("必填项不能为空")
         }
-        setTimeout("location.reload(true)", 100 )
+        setTimeout("location.reload(true)", 100)
         //window.$router.changeHash("/ueditor")
     })
     //点击新增文章
@@ -126,6 +125,11 @@ $(function() {
             return false;
         }
     })
-
-
+    // 点击编辑跳转传id
+    
+    $(".edit").click(function(){
+        var editid = $(this).parent().siblings(".tdid").text()
+        window.$router.changeHash("/ueditor?editid=" + editid)
+        $(window).scrollTop(0)
+    })
 })
