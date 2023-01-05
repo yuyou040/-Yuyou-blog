@@ -67,12 +67,13 @@ $(function() {
             timeout: 5000,
             success: function(data) {
                 var archivehtml=`
-                    <li>${data.erer}</li>
-                    <li>${data.erli}</li>
-                    <li>${data.erling}</li>
-                    <li>${data.yijiu}</li>
                     <li>${data.yiba}</li>
+                    <li>${data.yijiu}</li>
+                    <li>${data.erling}</li>
+                    <li>${data.erli}</li>
+                    <li>${data.erer}</li>
                 `
+                console.log(data)
                 $("#zxc").html(archivehtml)
             },
             error: function(xhr, type, errorThrown) {

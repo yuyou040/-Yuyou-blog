@@ -1,4 +1,6 @@
 $(function(){
+    // 懒加载
+    $("img").lazyload();
     /*导航栏点击实时更改颜色*/
     var tabtitle=$('.daohang_a ul li');
     tabtitle.click(function()
@@ -118,6 +120,17 @@ $(function(){
 //                 document.body.style.display = "none";
 //             };
 //         };
+//动态设置归档的年份
+    var year = new Date().getFullYear() 
+    var yeararry= new Array
+    for(var i=0;i<=4;i++){
+        var y = year-i
+        yeararry.push(y)
+    }
+    var yearhtml =''
+    $.each(yeararry, function(i, value) {yearhtml += `<li>${value}</li>`})
+    
+$("#mnb").html(yearhtml)
     var routerMap = {
         "": {
             "redirect": "home"

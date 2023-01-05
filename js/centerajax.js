@@ -22,7 +22,7 @@ $(function() {
                      contentHtml += `
                     <div class="center">
                      <p style="display:none;" class="valueid">${value.id}</p>
-						<img  src= ${value.imgaes}/>
+						<img  data-original= ${value.imgaes}/>
 						<h4>${value.title}</h4>
 						<p>${value.brief}</p>
 						<div class="xiaobiao">
@@ -33,6 +33,7 @@ $(function() {
                     `
                  })
                  $(".zuiclass").html(contentHtml)
+                 $("img").lazyload();
              },
              error: function(xhr, type, errorThrown) {
                  console.log(errorThrown)

@@ -27,13 +27,14 @@ $(function(){
                                           <span style="display:none">${value.id}</span>
                                           <p class="gdtime">${value.create_date}</p>
                                           <p class="gdtitle">${value.title}</p>
-                                          <img src=${value.imgaes}>
+                                          <img data-original=${value.imgaes}>
                                       </li>
                                   </ul>
                               </div>
                           `
                        })
                        $("#guidangboxlist").html(guidangHtml)
+                       $("img").lazyload();
                    },
                    error: function(xhr, type, errorThrown) {
                        console.log(errorThrown)

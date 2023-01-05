@@ -11,7 +11,13 @@ dim category_array,category_array_json
 dim i
 dim cate_string
 set jsonObj = new JSONobject  '//创建对象
-
+dim years,yearone,yeartwo,yearthree,yearfour,yearfive
+years = Year(now())
+yearone = "'%%"&years&"%%'"
+yeartwo = "'%%"&years-1&"%%'"
+yearthree = "'%%"&years-2&"%%'"
+yearfour = "'%%"&years-3&"%%'"
+yearfive = "'%%"&years-4&"%%'"
 ' 从ADODB.Recordset加载记录集
 dim cn, rs
 set cn = server.createobject("adodb.connection")
@@ -29,7 +35,7 @@ next
 jsonObj.Write() 
 end if
 if request.querystring("action")="create_date" then
-time_array = Array("'%%2018%%'","'%%2019%%'","'%%2020%%'","'%%2021%%'","'%%2022%%'")
+time_array = Array(yearone,yeartwo,yearthree,yearfour,yearfive)
 time_array_json = Array("yiba","yijiu","erling","erli","erer")
 jsonObj.defaultPropertyName = "yearmonthday"
 
