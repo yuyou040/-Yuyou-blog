@@ -73,7 +73,6 @@ $(function() {
                     <li>${data.erli}</li>
                     <li>${data.erer}</li>
                 `
-                console.log(data)
                 $("#zxc").html(archivehtml)
             },
             error: function(xhr, type, errorThrown) {
@@ -116,4 +115,59 @@ $(function() {
         });
     }
     actlately() 
+    function search(search) {
+        var url = 'http://192.168.47.1/myblog/asp/content.asp?action=search&searchvalue='+search;
+        $.ajax(url, {
+            dataType: 'json',
+            async: false,
+            type: 'get',
+            headers: {
+                'Content-Type': undefined
+            },
+            timeout: 5000,
+            success: function(data) {
+               var content = data.AdminList
+               var contentHtml = '';
+               
+               $.each(content, function(i, value) {
+                   contentHtml += `
+                  <div class="center">
+                   <p style="display:none;" class="valueid">${value.id}</p>
+                     						<img  data-original= ${value.imgaes}/>
+                     						<h4>${value.title}</h4>
+                     						<p>${value.brief}</p>
+                     						<div class="xiaobiao">
+                     						<span>${value.create_date}</span><a>${value.label}</a>
+                     						<a href="#" class="jixuyuedu">继续阅读</a>
+                     						</div>
+                     					</div>
+                  `
+               })
+               $(".zuiclass").html(contentHtml)
+               $("img").lazyload();
+            },
+            error: function(xhr, type, errorThrown) {
+                console.log(errorThrown)
+            }
+        });
+    }
+    // 搜索查询代码
+    $(document).on('input propertychange','#sicon input',function(){
+        if($("#sicon input").val().length>0){
+            let timeout;
+            (function throttling(){
+            	//先清理
+            	clearTimeout(timeout)	
+            	timeout = setTimeout(() => {
+               var sval=$("#sicon input").val()
+                  search(sval)
+            	}, 1500)
+            })()
+        }
+        else{
+            $(".zuiclass").html('')
+        }
+    })
+    
+    
 })

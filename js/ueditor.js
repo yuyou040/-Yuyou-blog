@@ -23,8 +23,9 @@ $(function(){
                        //赋值
                        ue.setContent(content[0].content);
                        //取值
-                       var contents = ue.getContent();
-                       //输出测试
+                       // var contents = ue.getContent();
+                       // //输出测试
+                       // console.log(contents)
                })
             },
             error: function(xhr, type, errorThrown) {

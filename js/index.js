@@ -129,6 +129,7 @@ $(function(){
     }
     var yearhtml =''
     $.each(yeararry, function(i, value) {yearhtml += `<li>${value}</li>`})
+
     
 $("#mnb").html(yearhtml)
     var routerMap = {
