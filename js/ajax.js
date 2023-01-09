@@ -115,58 +115,59 @@ $(function() {
         });
     }
     actlately() 
-    function search(search) {
-        var url = 'http://192.168.47.1/myblog/asp/content.asp?action=search&searchvalue='+search;
-        $.ajax(url, {
-            dataType: 'json',
-            async: false,
-            type: 'get',
-            headers: {
-                'Content-Type': undefined
-            },
-            timeout: 5000,
-            success: function(data) {
-               var content = data.AdminList
-               var contentHtml = '';
-               
-               $.each(content, function(i, value) {
-                   contentHtml += `
-                  <div class="center">
-                   <p style="display:none;" class="valueid">${value.id}</p>
-                     						<img  data-original= ${value.imgaes}/>
-                     						<h4>${value.title}</h4>
-                     						<p>${value.brief}</p>
-                     						<div class="xiaobiao">
-                     						<span>${value.create_date}</span><a>${value.label}</a>
-                     						<a href="#" class="jixuyuedu">继续阅读</a>
-                     						</div>
-                     					</div>
-                  `
-               })
-               $(".zuiclass").html(contentHtml)
-               $("img").lazyload();
-            },
-            error: function(xhr, type, errorThrown) {
-                console.log(errorThrown)
-            }
-        });
-    }
+    
     // 搜索查询代码
+    let timeout=null
     $(document).on('input propertychange','#sicon input',function(){
-        if($("#sicon input").val().length>0){
-            let timeout;
-            (function throttling(){
+            clearTimeout(timeout)    
             	//先清理
-            	clearTimeout(timeout)	
+                 var sval=$("#sicon input").val()
+                      if (sval.trim().length === 0) {
+                        $("#stext p").text("这里是Yuyou'blog的站内搜索引擎")
+                        $('.zuiclass').empty()
+                        return
+                      }
             	timeout = setTimeout(() => {
-               var sval=$("#sicon input").val()
-                  search(sval)
-            	}, 1500)
-            })()
-        }
-        else{
-            $(".zuiclass").html('')
-        }
+               
+                  var url = 'http://192.168.47.1/myblog/asp/content.asp?action=search&searchvalue='+sval;
+                  $.ajax(url, {
+                      dataType: 'json',
+                      async: false,
+                      type: 'get',
+                      headers: {
+                          'Content-Type': undefined
+                      },
+                      timeout: 5000,
+                      success: function(data) {
+                         var content = data.AdminList
+                         var contentHtml = '';
+                         if(content.length===0){
+                               $("#stext p").text("很抱歉！暂无关于"+sval+"的搜索结果")
+                               return
+                         }
+                         $.each(content, function(i, value) {
+                             contentHtml += `
+                            <div class="center">
+                             <p style="display:none;" class="valueid">${value.id}</p>
+                               						<img  data-original= ${value.imgaes}/>
+                               						<h4>${value.title}</h4>
+                               						<p>${value.brief}</p>
+                               						<div class="xiaobiao">
+                               						<span>${value.create_date}</span><a>${value.label}</a>
+                               						<a href="#" class="jixuyuedu">继续阅读</a>
+                               						</div>
+                               					</div>
+                            `
+                         })
+                         $("#stext p").text("以下是关于"+sval+"的搜索结果")
+                         $(".zuiclass").html(contentHtml)
+                         $("img").lazyload();
+                      },
+                      error: function(xhr, type, errorThrown) {
+                          console.log(errorThrown)
+                      }
+                  });
+            	}, 1000)
     })
     
     
