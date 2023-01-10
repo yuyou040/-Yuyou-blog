@@ -428,14 +428,17 @@ p {
     cursor: pointer;
 }
 .center h4:hover{
-    text-decoration:underline #01408e;
+    text-decoration:underline #01408e ;
 }
 .center span{
     margin-right: 5px;
 }
-.zuiclass img{
+.zuiclassimg{
     width: 100%;
     height: 230px;
+}
+.neirong p img{
+    width: 100% !important;
 }
 .center p {
     margin-left: 30px;

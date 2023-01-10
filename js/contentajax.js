@@ -16,7 +16,7 @@
                         $.each(neirong, function(i, value) {
                             neirongHtml += `
                                 <div class="zuiclass">
-                                <img src="${value.imgaes}" />
+                                <img class="zuiclassimg" src="${value.imgaes}" />
                                 <div class="neirong">
                                     <h2>${value.title}</h2>
                                     <span>${value.create_date}<a>${value.label}</a></span>

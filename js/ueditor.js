@@ -37,12 +37,20 @@ $(function() {
     }
     edit()
 
-    function uptxt(up) {
+
+
+    $("button").click(function() {
+        if (UE.getEditor('editor').getContent() == "") {
+            alert('请输入内容');
+        }
+        var formData = jQuery.trim(ue.getContent());
         var url = 'http://192.168.47.1/myblog/asp/del_add.asp?action=upload&upid=' + editid;
         $.ajax(url, {
             async: false,
             type: 'POST',
-            data: up,
+            data: {
+                'content':formData
+            },
             headers: {
                 'Content-Type': undefined
             },
@@ -54,16 +62,7 @@ $(function() {
                 console.log(errorThrown)
             }
         });
-    }
-
-    $("button").click(function() {
-        if (UE.getEditor('editor').getContent() == "") {
-            alert('请输入内容');
-        }
-        var formData = "content=" + UE.getEditor('editor').getContent();
-        console.log(formData);
-        uptxt(formData)
-        // window.$router.changeHash("/Article")
+        window.$router.changeHash("/Article")
     })
 
 })

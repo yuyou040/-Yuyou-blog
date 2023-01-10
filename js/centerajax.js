@@ -22,7 +22,7 @@ $(function() {
                      contentHtml += `
                     <div class="center">
                      <p style="display:none;" class="valueid">${value.id}</p>
-						<img  data-original= ${value.imgaes}/>
+						<img style="width:100%; height: 230px;" data-original= ${value.imgaes}/>
 						<h4>${value.title}</h4>
 						<p>${value.brief}</p>
 						<div class="xiaobiao">

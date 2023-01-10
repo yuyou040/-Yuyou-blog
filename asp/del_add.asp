@@ -8,7 +8,6 @@
  	conn.open
     upid=request.querystring("upid")
     content=request.form("content")
-    response.write(content)
  	'打开表
 	'读取数据库
 	if request.querystring("action")="delete" then
