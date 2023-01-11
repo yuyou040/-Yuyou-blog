@@ -18,6 +18,19 @@ $(function(){
             "color":"orange"
         })
     })
+    
+        // function htmlScroll(elFix) {
+        //       var top = document.body.scrollTop || document.documentElement.scrollTop;
+        //       if (elFix.data_top < top) {
+        //           elFix.style.position = 'fixed';
+        //           elFix.style.top = 0;
+        //           elFix.style.left = elFix.data_left;
+        //       }
+        //       else {
+        //           elFix.style.position = 'static';
+        //       }
+        //   }
+        // htmlScroll($(".left_bar_h"))
         /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".center", function(){
         var text_Id = $(this).children('.valueid').text()
@@ -112,15 +125,16 @@ $(function(){
             "transition":" 0.4s"
                         })
     }
-// 等待数据加载完再渲染页面
-// document.onreadystatechange = function () {
-//             if (document.readyState == "complete") {
-//                 document.body.style.display = "block";
-//             } else {
-//                 document.body.style.display = "none";
-//             };
-//         };
-//动态设置归档的年份
+    //标签懒加载
+$(window).scroll(function(e){
+    for(let i=0; i<$('.lazyload').length; i++) {
+        if(($($('.lazyload')[i]).offset().top - $(window).scrollTop()) < window.innerHeight) {
+            $($('.lazyload')[i]).css({
+                'display':'block'
+            });
+        }
+    }
+})
     var year = new Date().getFullYear() 
     var yeararry= new Array
     for(var i=0;i<=4;i++){

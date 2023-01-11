@@ -1,4 +1,3 @@
-<%@language="vbscript" codepage="65001"%>
 <!--#include file="./easyasp/easp.asp" -->
 <%
 dim File,cn,rs,sql
