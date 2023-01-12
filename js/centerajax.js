@@ -27,7 +27,7 @@ $(function() {
 						<p>${value.brief}</p>
 						<div class="xiaobiao">
 						<span>${value.create_date}</span><a>${value.label}</a>
-						<a href="#" class="jixuyuedu">继续阅读</a>
+						<a class="jixuyuedu">继续阅读</a>
 						</div>
 					</div>
                     `
@@ -41,6 +41,7 @@ $(function() {
          });
      }
      content()
+      
      //分页代码构成
       var pagss =Number(localStorage.getItem("page"))
      $('.bootstrap-iso #pagination1').jqPaginator({

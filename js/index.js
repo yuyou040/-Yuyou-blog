@@ -6,31 +6,37 @@ $(function(){
     tabtitle.click(function()
     {
         tabtitle.css({
-            "background":"var(--surface1)",
-            "border-radius":"0.3125rem",
             "text-align": "center",
             "color":"white",
             "border":"none"
         })
         $(this).css({
-            "background":"rgba(255,255,255,0.3)",
             "border":"white",
             "color":"orange"
         })
     })
+    var hashpath = location.hash.substring(2)
+    switch (hashpath){
+        case "home":
+            $('.daohang_a ul li:eq(1)').css({"border":"white","color":"orange"})
+            break;
+        case "blog":
+            $('.daohang_a ul li:eq(2)').css({"border":"white","color":"orange"})
+            break;
+        case "title":
+            $('.daohang_a ul li:eq(3)').css({"border":"white","color":"orange"})
+            break;
+        case "friend":
+            $('.daohang_a ul li:eq(4)').css({"border":"white","color":"orange"})
+            break;
+        case "":
+            $('.daohang_a ul li:eq(1)').css({"border":"white","color":"orange"})
+            break;    
+        default :
+            $('.daohang_a ul li:eq(1)').css({"border":"white","color":"orange"})
+    }
     
-        // function htmlScroll(elFix) {
-        //       var top = document.body.scrollTop || document.documentElement.scrollTop;
-        //       if (elFix.data_top < top) {
-        //           elFix.style.position = 'fixed';
-        //           elFix.style.top = 0;
-        //           elFix.style.left = elFix.data_left;
-        //       }
-        //       else {
-        //           elFix.style.position = 'static';
-        //       }
-        //   }
-        // htmlScroll($(".left_bar_h"))
+    
         /*点击导航栏或指定区域触发点击事件更改hash值*/
     $(document).on("click", ".center", function(){
         var text_Id = $(this).children('.valueid').text()
@@ -72,8 +78,10 @@ $(function(){
          window.$router.changeHash("/label?label_id="+label_id)
          $(window).scrollTop(0)
     });
-    
-    
+    //content a 标签阻止冒泡事件
+    $(".jixuyuedu").click(function(event) {
+         event.preventDefault(); 
+      });
     
     //切换夜间模式的方法
     $(document).on("click", ".daohang_a p:eq(2)", function(){
