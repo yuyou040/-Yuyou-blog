@@ -240,13 +240,6 @@ h1,h2,h3,h4,h5,p,span,tr,td,th,button{
     justify-content: space-around;
     flex-grow:1;
 }
-#jqplot div{
-    width: 60vh;
-    margin:20px 10px 0 10px ;
-    height:40vh ;
-    background-color: aquamarine;
-}
-
 
 
 

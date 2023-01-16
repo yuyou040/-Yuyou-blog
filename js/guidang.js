@@ -42,8 +42,8 @@ $(function(){
                });
            }
            guidang()
-           $(".gdtitle").click(function(){
-               var text_Id = $(this).siblings("span").text()
+           $(".guidangboxlist").click(function(){
+               var text_Id = $(this).children().children().children("span").text()
                window.$router.changeHash("/content?text_Id="+text_Id)
                $(window).scrollTop(0)
            })
