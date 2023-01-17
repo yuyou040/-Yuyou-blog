@@ -1,4 +1,12 @@
 $(function() {
+    var token = localStorage.getItem('token')
+    if(token==null){
+        $("#bestbox").css({
+            "display":"none"
+        })
+        window.location.href= "http://192.168.47.1/myblog/admin/login.html";
+    }
+    
     $("#leftdaohang ul div").click(function()
     {
         $("#leftdaohang ul div").css({
