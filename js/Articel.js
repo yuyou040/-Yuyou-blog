@@ -1,5 +1,13 @@
 $(function() {
     function Article() {
+        var token = localStorage.getItem('token')
+        var strings = token.split(".");
+        var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
+            "/")))));
+        var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
+        if (present>userinfo.exp) {
+           window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+        }
         var url = 'http://192.168.47.1/myblog/asp/content.asp?admin=Article';
         $.ajax(url, {
             dataType: 'json',
@@ -36,6 +44,14 @@ $(function() {
     var delid;
 
     function delblog() {
+       var token = localStorage.getItem('token')
+       var strings = token.split(".");
+       var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
+           "/")))));
+       var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
+       if (present>userinfo.exp) {
+          window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+       }
         var url = 'http://192.168.47.1/myblog/asp/del_add.asp?action=delete&delid=' + delid;
         $.ajax(url, {
             dataType: 'json',
@@ -67,8 +83,6 @@ $(function() {
         }
         return url;
     }
-
-
     function base64String(file) {
         return new Promise((resolve, reject) => {
             var reader = new FileReader();

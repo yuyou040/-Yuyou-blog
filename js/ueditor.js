@@ -1,4 +1,12 @@
 $(function() {
+  var token = localStorage.getItem('token')
+        var strings = token.split(".");
+        var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
+            "/")))));
+        var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
+        if (present>userinfo.exp) {
+           window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+        }
     UE.delEditor('editor');
     var ue = UE.getEditor('editor');
 
@@ -10,6 +18,14 @@ $(function() {
     var editid = new URLSearchParams(window.location.hash.split('?')[1]).get('editid');
 
     function edit() {
+        var token = localStorage.getItem('token')
+        var strings = token.split(".");
+        var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
+            "/")))));
+        var present = Date.parse(new Date()).toString().substring(0, 10)//获取当前时间
+        if (present>userinfo.exp) {
+           window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+        }
         var url = 'http://192.168.47.1/myblog/asp/content.asp?action=edit&editid=' + editid;
         $.ajax(url, {
             dataType: 'json',
@@ -22,12 +38,7 @@ $(function() {
             success: function(data) {
                 var content = data.AdminList
                 ue.addListener("ready", function() {
-                    //赋值
                     ue.setContent(content[0].content);
-                    //取值
-                    // var contents = ue.getContent();
-                    // //输出测试
-                    // console.log(contents)
                 })
             },
             error: function(xhr, type, errorThrown) {
@@ -40,6 +51,14 @@ $(function() {
 
 
     $("button").click(function() {
+     var token = localStorage.getItem('token')
+     var strings = token.split(".");
+     var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
+         "/")))));
+     var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
+     if (present>userinfo.exp) {
+        window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+     }
         if (UE.getEditor('editor').getContent() == "") {
             alert('请输入内容');
         }
