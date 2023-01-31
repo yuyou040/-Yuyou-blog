@@ -4,7 +4,7 @@ $(function() {
      var pageid = 1;
 
      function content() {
-         var url = 'http://192.168.47.1/myblog/asp/content.asp?action=read_content&pageId=' + pageid;
+         var url = 'http://192.168.47.1/asp/content.asp?action=read_content&pageId=' + pageid;
          $.ajax(url, {
              dataType: 'json',
              async: false,

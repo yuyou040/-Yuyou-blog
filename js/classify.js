@@ -2,7 +2,7 @@ $(function(){
     var classify = new URLSearchParams(window.location.hash.split('?')[1]).get('class_id');
     
     function neirong() {
-        var url = 'http://192.168.47.1/myblog/asp/content.asp?action=classify&class_id='+classify;
+        var url = 'http://192.168.47.1/asp/content.asp?action=classify&class_id='+classify;
       $.ajax(url, {
           dataType: 'json',
           async: false,

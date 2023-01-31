@@ -90,7 +90,7 @@ $(function(){
         localStorage.setItem("color-mode", "light")
         // 解决老版本网站主背景使用var变量不兼容问题
          $('body').css({ 
-            "background":" url(../myblog/img/bg.jpg)",
+            "background":" url(../img/bg.jpg)",
             "transition":" 0.4s"
                         })
     }
@@ -99,13 +99,13 @@ $(function(){
         localStorage.setItem("color-mode", "dark")
         // 解决老版本网站主背景使用var变量不兼容问题
          $('body').css({ 
-            "background":" url(../myblog/img/bg2.jpg)",
+            "background":" url(../img/bg2.jpg)",
             "transition":" 0.4s"
                         })
     }
     }); 
     $(document).on("click", ".daohang_a p:eq(3)", function(){
-      window.open('_blank').location = "http://192.168.47.1/myblog/admin/admin.html"
+      window.open('_blank').location = "http://192.168.47.1/admin/admin.html"
     });
     // 获取localStorage
     var colormode = localStorage.getItem('color-mode')
@@ -116,20 +116,20 @@ $(function(){
            document.documentElement.setAttribute("color-mode", "light");
            // 解决老版本网站主背景使用var变量不兼容问题
            $('body').css({ 
-            "background":" url(../myblog/img/bg.jpg)",
+            "background":" url(../img/bg.jpg)",
             "transition":" 0.4s"
                         })
           }
           // 解决老版本网站主背景使用var变量不兼容问题
     if(colormode=='dark'){
         $('body').css({ 
-            "background":" url(../myblog/img/bg2.jpg)",
+            "background":" url(../img/bg2.jpg)",
             "transition":" 0.4s"
                         })
     }
     else{
         $('body').css({ 
-            "background":" url(../myblog/img/bg.jpg)",
+            "background":" url(../img/bg.jpg)",
             "transition":" 0.4s"
                         })
     }
@@ -159,33 +159,33 @@ $("#mnb").html(yearhtml)
             "redirect": "home"
         },
         "home": {
-            "path": "../myblog/center.html",
+            "path": "../center.html",
             "son": {}
         },
         "content": {
-            "path": "../myblog/content.html",
+            "path": "../content.html",
             "son": {}
         },
         "title": {
-            "path": "../myblog/biaoqian.html",
+            "path": "../biaoqian.html",
             "son": {}
         },
         "blog": {
-            "path": "../myblog/guidang.html",
+            "path": "../guidang.html",
             "son": {}
         },
         "friend":{
-           "path": "../myblog/youlian.html",
+           "path": "../youlian.html",
             "son": {}
         },
         "search":{
-          "path":"../myblog/search.html",
+          "path":"../search.html",
         }    ,
         "classify":{
-          "path":"../myblog/classify.html",
+          "path":"../classify.html",
         }  ,
         "label":{
-          "path":"../myblog/label.html",
+          "path":"../label.html",
         }
     }
     window.$router.initial(routerMap)

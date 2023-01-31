@@ -1,7 +1,7 @@
 $(function() {
     /*获取标签*/
     function biaoqian() {
-        var url = 'http://192.168.47.1/myblog/asp/app.asp?action=read';
+        var url = 'http://192.168.47.1/asp/app.asp?action=read';
         $.ajax(url, {
             dataType: 'json',
             async: true,
@@ -28,7 +28,7 @@ $(function() {
 
     // 获取博客分类
     function category() {
-        var url = 'http://192.168.47.1/myblog/asp/category.asp?action=read_category';
+        var url = 'http://192.168.47.1/asp/category.asp?action=read_category';
         $.ajax(url, {
             dataType: 'json',
             async: true,
@@ -56,7 +56,7 @@ $(function() {
     category()
     //获取归档api
     function archive() {
-        var url = 'http://192.168.47.1/myblog/asp/category.asp?action=create_date';
+        var url = 'http://192.168.47.1/asp/category.asp?action=create_date';
         $.ajax(url, {
             dataType: 'json',
             async: false,
@@ -83,7 +83,7 @@ $(function() {
     archive()
     //获取最近文章的接口
     function actlately() {
-        var url = 'http://192.168.47.1/myblog/asp/content.asp?articles=lately';
+        var url = 'http://192.168.47.1/asp/content.asp?articles=lately';
         $.ajax(url, {
             dataType: 'json',
             async: false,
@@ -129,7 +129,7 @@ $(function() {
                       }
             	timeout = setTimeout(() => {
                
-                  var url = 'http://192.168.47.1/myblog/asp/content.asp?action=search&searchvalue='+sval;
+                  var url = 'http://192.168.47.1/asp/content.asp?action=search&searchvalue='+sval;
                   $.ajax(url, {
                       dataType: 'json',
                       async: false,

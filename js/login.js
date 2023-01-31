@@ -6,7 +6,7 @@ $(function() {
         var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
             "/")))));
         if(present<userinfo.exp){
-            window.location.href = "http://192.168.47.1/myblog/admin/admin.html";
+            window.location.href = "http://192.168.47.1/admin/admin.html";
         }
     }
     //登录ajax请求
@@ -18,7 +18,7 @@ $(function() {
         } else if ($("#mima").val() == "") {
             alert('密码不能为空');
         }
-        var url = 'http://192.168.47.1/myblog/asp/token.asp?username=' + username + '&password=' +
+        var url = 'http://192.168.47.1/asp/token.asp?username=' + username + '&password=' +
             password;
         $.ajax(url, {
             async: false,
@@ -33,7 +33,7 @@ $(function() {
                     case 200:
                         localStorage.setItem("token", data.token)
                         window.location.href =
-                        "http://192.168.47.1/myblog/admin/admin.html";
+                        "http://192.168.47.1/admin/admin.html";
                         break;
                     case 401:
                         alert("抱歉登录失败")

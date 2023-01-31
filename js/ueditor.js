@@ -5,7 +5,7 @@ $(function() {
             "/")))));
         var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
         if (present>userinfo.exp) {
-           window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+           window.location.href = "http://192.168.47.1/admin/login.html";
         }
     UE.delEditor('editor');
     var ue = UE.getEditor('editor');
@@ -24,9 +24,9 @@ $(function() {
             "/")))));
         var present = Date.parse(new Date()).toString().substring(0, 10)//获取当前时间
         if (present>userinfo.exp) {
-           window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+           window.location.href = "http://192.168.47.1/admin/login.html";
         }
-        var url = 'http://192.168.47.1/myblog/asp/content.asp?action=edit&editid=' + editid;
+        var url = 'http://192.168.47.1/asp/content.asp?action=edit&editid=' + editid;
         $.ajax(url, {
             dataType: 'json',
             async: false,
@@ -57,13 +57,13 @@ $(function() {
          "/")))));
      var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
      if (present>userinfo.exp) {
-        window.location.href = "http://192.168.47.1/myblog/admin/login.html";
+        window.location.href = "http://192.168.47.1/admin/login.html";
      }
         if (UE.getEditor('editor').getContent() == "") {
             alert('请输入内容');
         }
         var formData = jQuery.trim(ue.getContent());
-        var url = 'http://192.168.47.1/myblog/asp/del_add.asp?action=upload&upid=' + editid;
+        var url = 'http://192.168.47.1/asp/del_add.asp?action=upload&upid=' + editid;
         $.ajax(url, {
             async: false,
             type: 'POST',

@@ -1,7 +1,7 @@
  $(function() {
             var contentid = new URLSearchParams(window.location.hash.split('?')[1]).get('text_Id');
             function neirong() {
-                var url = 'http://192.168.47.1/myblog/asp/content.asp?read=blogmessage&text_Id=' + contentid;
+                var url = 'http://192.168.47.1/asp/content.asp?read=blogmessage&text_Id=' + contentid;
                 $.ajax(url, {
                     dataType: 'json',
                     async: false,
