@@ -6,9 +6,9 @@ $(function() {
             "/")))));
         var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
         if (present>userinfo.exp) {
-           window.location.href = "http://192.168.47.1/admin/login.html";
+           window.location.href = "http://101.43.93.193/admin/login.html";
         }
-        var url = 'http://192.168.47.1/asp/content.asp?admin=Article';
+        var url = 'http://101.43.93.193/asp/content.asp?admin=Article';
         $.ajax(url, {
             dataType: 'json',
             async: false,
@@ -50,9 +50,9 @@ $(function() {
            "/")))));
        var present = Date.parse(new Date()).toString().substring(0, 10) //获取当前时间
        if (present>userinfo.exp) {
-          window.location.href = "http://192.168.47.1/admin/login.html";
+          window.location.href = "http://101.43.93.193/admin/login.html";
        }
-        var url = 'http://192.168.47.1/asp/del_add.asp?action=delete&delid=' + delid;
+        var url = 'http://101.43.93.193/asp/del_add.asp?action=delete&delid=' + delid;
         $.ajax(url, {
             dataType: 'json',
             async: false,

@@ -23772,6 +23772,8 @@ UE.plugin.register('autoupload', function (){
                     loader.setAttribute('title', data.title || '');
                     loader.setAttribute('alt', data.original || '');
                     loader.removeAttribute('id');
+					loader.setAttribute('width','100%');//图片宽度100%
+					loader.setAttribute('height','auto');//图片高度auto
                     domUtils.removeClasses(loader, 'loadingclass');
                 }
             };
@@ -24529,6 +24531,8 @@ UE.plugin.register('simpleupload', function (){
                             loader.setAttribute('title', json.title || '');
                             loader.setAttribute('alt', json.original || '');
                             loader.removeAttribute('id');
+							loader.setAttribute('width','100%');//图片宽度100%
+							loader.setAttribute('height','auto');//图片高度auto
                             domUtils.removeClasses(loader, 'loadingclass');
                         } else {
                             showErrorLoader && showErrorLoader(json.state);

@@ -7,7 +7,7 @@ $(function(){
             $(".guidangbox h2").text(year)
         }
         function guidang() {
-               var url = 'http://192.168.47.1/asp/content.asp?guidang=blog&year='+year;
+               var url = 'http://101.43.93.193/asp/content.asp?guidang=blog&year='+year;
                $.ajax(url, {
                    dataType: 'json',
                    async: false,

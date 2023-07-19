@@ -22,8 +22,10 @@ else
 	if File.Succeed then
     set cn = server.createobject("adodb.connection")
     cn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source="&server.mapPath("../access/frist.accdb")
+	Easp.Println "读取成功"
     set rs = server.createobject("adodb.recordset")
     sql="select * from content"
+	Easp.Println "查询成功"
     rs.open sql,cn,1,3
 		Easp.Println "文件'" & File.LocalName & "'上传成功，保存位置'" & File.Path & File.FileName & "',文件大小" & File.Size & "字节"
     rs.addnew()
@@ -39,7 +41,7 @@ else
     set rs = nothing
     set cn = nothing
 	else
-		Easp.Println File.Exception & "<br />"
+		Easp.Println File.Exception &"上传失败"
 	end if
 end if
 %>

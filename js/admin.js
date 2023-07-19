@@ -4,7 +4,7 @@ $(function() {
         $("#bestbox").css({
             "display": "none"
         })
-        window.location.href = "http://192.168.47.1/admin/login.html";
+        window.location.href = "http://101.43.93.193/admin/login.html";
     }
     var strings = token.split(".");
     var userinfo = JSON.parse(decodeURIComponent(escape(window.atob(strings[1].replace(/-/g, "+").replace(/_/g,
@@ -25,7 +25,7 @@ $(function() {
     var present =timestampToTime(Date.parse(new Date()).toString().substring(0,10)*1000)//获取当前时间
     if(present>exptime){
         localStorage.removeItem("token") 
-        window.location.href = "http://192.168.47.1/admin/login.html";
+        window.location.href = "http://101.43.93.193/admin/login.html";
     }
     
     $("#leftdaohang ul div").click(function() {
@@ -39,7 +39,7 @@ $(function() {
         })
     })
     $("#zhuzhan").click(function() {
-        window.open('_blank').location = "http://192.168.47.1/index.html"
+        window.open('_blank').location = "http://101.43.93.193/index.html"
     })
     $(document).on("click", "#fenxi", function() {
         window.$router.to("/analysis")
@@ -55,7 +55,7 @@ $(function() {
     })
     $(document).on("click","#loginout",function(){
         localStorage.removeItem("token")
-        window.location.href = "http://192.168.47.1/admin/login.html";
+        window.location.href = "http://101.43.93.193/admin/login.html";
     })
     var routerMap = {
         "": {

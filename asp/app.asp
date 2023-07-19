@@ -22,7 +22,6 @@
 	index=0
  	redim myArray(rs.recordcount-1) '将数组大小重新定义为数据表行数
  	do while not rs.eof
- 	'response.charset="utf8"
  	qwe= rs("label")
  	myArray(index)=qwe
 	rs.movenext

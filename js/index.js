@@ -105,7 +105,7 @@ $(function(){
     }
     }); 
     $(document).on("click", ".daohang_a p:eq(3)", function(){
-      window.open('_blank').location = "http://192.168.47.1/admin/admin.html"
+      window.open('_blank').location = "http://101.43.93.193/admin/admin.html"
     });
     // 获取localStorage
     var colormode = localStorage.getItem('color-mode')
