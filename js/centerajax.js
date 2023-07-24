@@ -26,7 +26,7 @@ $(function() {
 						<h4>${value.title}</h4>
 						<p>${value.brief}</p>
 						<div class="xiaobiao">
-						<span>${value.create_date}</span><a>${value.label}</a>
+						日期：<span>${value.create_date}</span>&nbsp; 标签：<a>${value.label}</a>
 						<a class="jixuyuedu">继续阅读</a>
 						</div>
 					</div>
