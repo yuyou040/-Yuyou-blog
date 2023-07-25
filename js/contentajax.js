@@ -19,7 +19,7 @@
                                 <img class="zuiclassimg" src="${value.imgaes}" />
                                 <div class="neirong">
                                     <h2>${value.title}</h2>
-                                   <span>日期：${value.create_date} &nbsp;标签：<a>${value.label}</a></span>
+                                   <span class='spanneirong'>日期：${value.create_date} &nbsp;标签：<a>${value.label}</a></span>
                                     <p>${value.content}</p>
                                 </div>
                                 </div>
