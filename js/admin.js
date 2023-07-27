@@ -84,3 +84,7 @@ $(function() {
     }
     window.$router.initial(routerMap)
 })
+
+window.onload=function(){
+	$(body).show()
+}

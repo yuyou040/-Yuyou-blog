@@ -48,19 +48,19 @@ $(function(){
         window.$router.changeHash("/content?text_Id="+zuijin_Id)
        $(window).scrollTop(0)
     });
-     $(document).on("click", "ul li:eq(1)", function(){
+     $('.daohang').on("click", "ul li:eq(1)", function(){
          window.$router.changeHash("/home")
     });
-     $(document).on("click", "ul li:eq(2)", function(){
+     $('.daohang').on("click", "ul li:eq(2)", function(){
            window.$router.changeHash("/blog")
     });
-    $(document).on("click", "ul li:eq(3)", function(){
+    $('.daohang').on("click", "ul li:eq(3)", function(){
           window.$router.changeHash("/title")
     });
-    $(document).on("click", "ul li:eq(4)", function(){
+    $('.daohang').on("click", "ul li:eq(4)", function(){
           window.$router.changeHash("/friend")
     });
-    $(document).on("click", ".daohang_a p:eq(1)", function(){
+    $('.daohang').on("click", ".daohang_a p:eq(1)", function(){
           window.$router.changeHash("/search")
     });
     $("#mnb").on("click", "li", function(){
@@ -190,3 +190,27 @@ $("#mnb").html(yearhtml)
     }
     window.$router.initial(routerMap)
 }) 
+window.onload=function(){
+	const leftbarh = `<img src="img/761e022dbfaeee51bcbaac259c7311b.jpg"/>
+			<p>Yuyou</p>
+			<p>永远热爱，永远热泪盈眶</p>
+			<ul >
+				<li>100</li>
+				<li>10</li>
+				<li>100</li>
+				<li>40</li>
+				<li>文章</li>
+				<li>分类</li>
+				<li>标签</li>
+				<li>万字</li>
+			</ul>`
+	$('.skeleton-box').hide()
+	$('.left_bar_h').show()
+	$('.left_bar_c').show()
+	$('.left_bar_f').show()
+	$('.right_bar_h').show()
+	$('.right_bar_c').show()
+	$('#router-view-1').show()
+	$('.daohang').show()
+	$('.left_bar_h').html(leftbarh)
+}

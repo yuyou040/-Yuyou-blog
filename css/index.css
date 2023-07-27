@@ -66,6 +66,7 @@ body {
 
 .daohang {
     margin: 0 auto;
+	display: none;
 }
 
 .daohang_a {
@@ -130,7 +131,6 @@ h1,h2,h3,h4,h5,p,span{
 }
 .easyui-linkbutton {
     display: inline;
-    /*text-align: right;*/
     width: 40px;
     height: 40px;
 }
@@ -194,6 +194,7 @@ h1,h2,h3,h4,h5,p,span{
 /* css注释：设置了浏览器宽度不小于1201px时 abc 显示1200px宽度 */ 
 
 .right_bar_h {
+	display: none;
     line-height: 30px;
     padding: 10px 5px;
     background-color: var(--surface3);
@@ -260,8 +261,11 @@ h1,h2,h3,h4,h5,p,span{
     margin-top: -0.625rem;
     transition: 0.4s;
 }
-
+#router-view-1{
+	display: none;
+}
 .right_bar_c {
+	display: none;
     margin-top: 22.5px;
     padding: 10px 5px;
     background-color: var(--surface3);
@@ -272,6 +276,7 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .left_bar_h {
+	display: none;
     text-align: center;
     padding: 10px 5px;
     background-color: var(--surface3);
@@ -282,6 +287,7 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .left_bar_c {
+	display: none;
     margin-top: 22.5px;
     padding: 10px 5px;
     background-color: var(--surface3);
@@ -292,6 +298,7 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .left_bar_f {
+	display: none;
     margin-top: 22.5px;
     padding: 10px 5px;
     background-color: var(--surface3);
@@ -302,7 +309,6 @@ h1,h2,h3,h4,h5,p,span{
 }
 
 .left_bar_h img {
-    transition: linear 0.8s;
     border-radius: 50%;
     width: 6.25rem;
     height: 6.25rem;

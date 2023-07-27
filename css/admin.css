@@ -32,9 +32,11 @@ html[color-mode='dark'] {
     padding: 0;
 }
 body {
+	display: none;
     background:white;
     transition: 0.4s;
 }
+
 ul li{
     margin: 0;
     padding: 0;
