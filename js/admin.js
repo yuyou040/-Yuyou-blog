@@ -86,5 +86,5 @@ $(function() {
 })
 
 window.onload=function(){
-	$(body).show()
+	$("body").show()
 }

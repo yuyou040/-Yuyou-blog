@@ -59,7 +59,9 @@ $(function() {
                pageid=num;
                content()
                localStorage.setItem("page",pageid)
-               // var pagss =Number(localStorage.getItem("page"))
+			     $("body,html").animate({
+			                scrollTop: 0
+			    }, 500);
            }
            else{
                pageid = pagss
