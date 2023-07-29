@@ -151,8 +151,20 @@ $(window).scroll(function(e){
     }
     var yearhtml =''
     $.each(yeararry, function(i, value) {yearhtml += `<li>${value}</li>`})
-
-    
+	
+	$(window).scroll(function() {
+		if ($(window).scrollTop() >= 500) {
+			$(".backtop").show();
+		} else {
+			$(".backtop").hide();
+		}
+	});
+	$(".backtop").click(function() {
+			$("body,html").animate({
+			    scrollTop: 0
+			}, 500);
+		});
+	
 $("#mnb").html(yearhtml)
     var routerMap = {
         "": {

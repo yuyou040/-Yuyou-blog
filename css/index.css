@@ -785,3 +785,21 @@ text-align: center;
     line-height: 100px;
     font-size: 20px;
 }
+
+/* 回到顶比按钮 */
+.backtop{
+	display: none;
+	width: 3.125rem;
+	height: 3.125rem;
+	background-color: var(--surface3);
+	color: var(--element1);
+	text-align: center;
+	line-height: 3.125rem;
+	font-weight: bold;
+	font-size: 1.25rem;
+	border-radius: 0.46875rem;
+	position: fixed;
+	right: 3.5px;
+	bottom: 10px;
+	cursor: pointer;
+}
