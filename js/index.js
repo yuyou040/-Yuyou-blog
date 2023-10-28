@@ -136,7 +136,7 @@ $(function(){
     //标签懒加载
 $(window).scroll(function(e){
     for(let i=0; i<$('.lazyload').length; i++) {
-        if(($($('.lazyload')[i]).offset().top - $(window).scrollTop()) < window.innerHeight) {
+        if(($($('.lazyload')[i]).offset().top - $(window).scrollTop()) <= window.innerHeight) {
             $($('.lazyload')[i]).css({
                 'display':'block'
             });
