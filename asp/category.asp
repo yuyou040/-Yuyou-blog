@@ -46,6 +46,16 @@ for q = 0 to ubound(time_array)
 next
 jsonObj.Write() 
 end if
+if request.querystring("action")="head_card" then 
+sqlArray = Array("SELECT COUNT(title) FROM content","SELECT COUNT(label) FROM content","SELECT SUM(LEN(content)) FROM content")
+sqlArray_json = Array("wenzhang","biaoqian","zishu")
+jsonObj.defaultPropertyName = "message"
+for z = 0 to ubound(sqlArray)
+	set rs = cn.execute(sqlArray(z))
+    jsonObj.add sqlArray_json(z), rs("Expr1000")
+next
+jsonObj.Write() 
+end if
 rs.Close
 cn.Close
 set rs = Nothing

@@ -33,9 +33,4 @@
                 });
             }
             neirong()
-            // window.changyan.api.config({
-            //     appid: 'cywgyEgGi',
-            //     conf: 'prod_41b23efdb9b6c51afa4be07f6c94aa95'
-            // });
-            
         })

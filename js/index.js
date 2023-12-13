@@ -224,5 +224,4 @@ window.onload=function(){
 	$('.right_bar_c').show()
 	$('#router-view-1').show()
 	$('.daohang').show()
-	$('.left_bar_h').html(leftbarh)
 }
