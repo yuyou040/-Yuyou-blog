@@ -203,19 +203,6 @@ $("#mnb").html(yearhtml)
     window.$router.initial(routerMap)
 }) 
 window.onload=function(){
-	const leftbarh = `<img src="img/761e022dbfaeee51bcbaac259c7311b.jpg"/>
-			<p>Yuyou</p>
-			<p>永远热爱，永远热泪盈眶</p>
-			<ul >
-				<li>100</li>
-				<li>10</li>
-				<li>100</li>
-				<li>40</li>
-				<li>文章</li>
-				<li>分类</li>
-				<li>标签</li>
-				<li>万字</li>
-			</ul>`
 	$('.skeleton-box').hide()
 	$('.left_bar_h').show()
 	$('.left_bar_c').show()

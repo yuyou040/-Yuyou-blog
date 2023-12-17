@@ -1,4 +1,9 @@
 $(function() {
+	var gettoken = new URLSearchParams(window.location.href.split('?')[1]).get('token')
+	if(gettoken != null ){
+		localStorage.setItem("token", gettoken)
+		window.location.href ="http://101.43.93.193/admin/admin.html";
+	}
     var token = localStorage.getItem('token')
     var present =Date.parse(new Date()).toString().substring(0,10)//获取当前时间
     if (token != null) {
@@ -32,8 +37,7 @@ $(function() {
                 switch (data.code) {
                     case 200:
                         localStorage.setItem("token", data.token)
-                        window.location.href =
-                        "http://101.43.93.193/admin/admin.html";
+                        window.location.href ="http://101.43.93.193/admin/admin.html";
                         break;
                     case 401:
                         alert("抱歉登录失败")
@@ -45,5 +49,7 @@ $(function() {
             }
         });
     })
-
+	$(".github").click(function(){
+		window.location.href ="https://github.com/login/oauth/authorize?client_id=65de3d1437080ef4cd0a&redirect_uri=http://101.43.93.193/asp/token.asp";
+	})
 })
